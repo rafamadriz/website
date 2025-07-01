@@ -3,15 +3,30 @@
 
 <head>
   <meta charset="utf-8">
-  <title>MyBlog</title>
+  {% block title %} {% endblock title %}
+  <link rel="stylesheet" href="/style.css">
 </head>
 
 <body>
-  <section class="section">
-    <div class="container">
+
+  <div class="container">
+
+      <nav>
+          <div class="left-link">
+            <a href="/"><strong>~rafaelmadriz.com</strong></a>
+          </div>
+
+          <div class="right-links">
+            <a href="/blog">Archive</a>
+          </div>
+      </nav>
+
+    <div class="content">
       {% block content %} {% endblock content %}
     </div>
-  </section>
+
+  </div>
+
 </body>
 
 </html>

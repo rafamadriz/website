@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block title %} 
+<title>Rafael Madriz</title>
+{% endblock title %}
+
+{% block content %}
+
+<p>Salutations! I'm Rafael,</p>
+<p>
+Welcome to my corner of the internet. I'm currently in the proccess of building
+my website. If you want to send any recommendation or want to get in touch, feel
+free to send an email: <em>me at rafaelmadriz.com</em>
+</p>
+
+{% set blog_pages = get_section(path="blog/_index.md") %}
+
+{% for _, posts in blog_pages.pages | group_by(attribute="year") %}
+    <ul class="archive-list">
+      {% for post in posts %}
+        <li>
+          <a href="{{ post.permalink }}">{{ post.title }}</a> 
+          <span>{{post.year}}</span>
+        </li>
+      {% endfor %}
+    </ul>
+{% endfor %}
+
+{{ section.content | safe }}
+
+{% endblock content %}
