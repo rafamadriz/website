@@ -1,6 +1,16 @@
 # The URL the site will be built for
 base_url = "https://rafaelmadriz.com"
 
+
+# The site title and description; used in feeds by default.
+title = "Rafael's Blog"
+description = ""
+
+author = "Rafael Madriz"
+
+# The default language; used in feeds.
+default_language = "en"
+
 # Whether to automatically compile all Sass files in the sass directory
 compile_sass = true
 
