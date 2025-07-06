@@ -16,18 +16,7 @@ free to send an email: <em>me at rafaelmadriz.com</em>
 You can also find me in <a href="https://github.com/rafamadriz">Github</a> and <a href="https://bsky.app/profile/rafaelmadriz.com">Bluesky</a>.
 </p>
 
-{% set blog_pages = get_section(path="blog/_index.md") %}
-
-{% for _, posts in blog_pages.pages | group_by(attribute="year") %}
-    <ul class="archive-list">
-      {% for post in posts %}
-        <li>
-          <a href="{{ post.permalink }}">{{ post.title }}</a> 
-          <span>{{post.year}}</span>
-        </li>
-      {% endfor %}
-    </ul>
-{% endfor %}
+{% include "archive-list.html" %}
 
 {{ section.content | safe }}
 

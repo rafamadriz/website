@@ -1,0 +1,12 @@
+{% set blog_pages = get_section(path="blog/_index.md") %}
+
+{% for _, posts in blog_pages.pages | group_by(attribute="year") %}
+<ul class="archive-list">
+    {% for post in posts %}
+    <li>
+        <a href="{{ post.permalink }}">{{ post.title }}</a> 
+        <span>{{post.date}}</span>
+    </li>
+    {% endfor %}
+</ul>
+{% endfor %}
