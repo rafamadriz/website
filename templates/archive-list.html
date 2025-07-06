@@ -5,7 +5,7 @@
     {% for post in posts %}
     <li>
         <a href="{{ post.permalink }}">{{ post.title }}</a> 
-        <span>{{post.date}}</span>
+        <time datetime="{{post.date}}">{{post.date}}</time>
     </li>
     {% endfor %}
 </ul>
