@@ -54,8 +54,17 @@
   }
 }
 
+@font-face {
+    font-family: "Atkinson";
+    src: url('./fonts/AtkinsonHyperlegibleNextVF-Variable.woff2') format('woff2');
+}
+
+
 body {
-    font-family: sans;
+    font-size: 16px;
+    background-color: var(--bg);
+    color: var(--text);
+    font-family: 'Atkinson', sans;
     font-size: 1.2rem;
 }
 
@@ -88,7 +97,7 @@ nav {
 ul.archive-list {
     list-style: none;
     margin: 0;
-    padding: 0;
+    padding: 0.5em;
 }
 
 ul.archive-list li {
