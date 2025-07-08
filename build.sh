@@ -30,10 +30,5 @@ main() {
     ./zola build
 }
 
-echo "pwd command..."
-pwd
-echo "ls -lA command..."
-ls -lA
-
 set -euo pipefail
 main "$@"
