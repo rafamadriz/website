@@ -29,7 +29,7 @@ I realized that I didn't need to choose the *"perfect"* set of technologies to s
 >
 > <footer>— <cite><a href="https://rachelandrew.co.uk/archives/2017/01/05/its-more-than-just-the-words/">Rachel Andrew</a></cite></footer>
 
-I went with [zola](https://www.getzola.org/) as my SSG of choice. I really wanted to go the "minimalist" way and use something like [pandoc](https://pandoc.org/) for generating the HTML from markdown, and that's it, nothing else, but for the time being, I've decided to make my life simpler by using an SSG that comes with a lot of useful features.
+I went with [Zola](https://www.getzola.org/) as my SSG of choice. I really wanted to go the "minimalist" way and use something like [Pandoc](https://pandoc.org/) for generating the HTML from markdown, and that's it, nothing else, but for the time being, I've decided to make my life simpler by using an SSG that comes with a lot of useful features.
 
 With all of that said, and taking inspiration from what I read in [*Into the Personal-Website-Verse*](https://matthiasott.com/articles/into-the-personal-website-verse), I'll publish the most basic version of my personal website, and then document the process of improving it, making mistakes and learning new things. 
 
