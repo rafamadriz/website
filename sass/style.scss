@@ -1,5 +1,5 @@
 :root {
-  // color palette
+  /* color palette */
   --color-950: #eef6fb;
   --color-900: #d0e5f2;
   --color-800: #aedbf4;
@@ -12,12 +12,12 @@
   --color-100: #022a38;
   --color-50: #081921;
 
-  // Light mode - default
-  --bg: var(--color-950);         // #eef6fb
+  /* Light mode - default */
+  --bg: var(--color-950);         /* #eef6fb */
   --bg-alt: var(--color-900);
-  --text: var(--color-100);       // #022a38
+  --text: var(--color-100);       /* #022a38 */
   --text-muted: var(--color-300);
-  --accent: var(--color-500);     // #0098c2
+  --accent: var(--color-500);     /* #0098c2 */
   --accent-alt: var(--color-700);
   --border: var(--color-900);
   --button-primary-bg: var(--color-500);
@@ -28,14 +28,14 @@
   --link: var(--color-400);
 }
 
-// Dark mode overrides
+/* Dark mode overrides */
 @media (prefers-color-scheme: dark) {
   :root {
-    --bg: var(--color-50);         // #081921
+    --bg: var(--color-50);         /* #081921 */
     --bg-alt: var(--color-100);
-    --text: var(--color-950);      // #eef6fb
+    --text: var(--color-950);      /* #eef6fb */
     --text-muted: var(--color-700);
-    --accent: var(--color-700);    // #78d1fb
+    --accent: var(--color-700);    /* #78d1fb */
     --accent-alt: var(--color-500);
     --border: var(--color-200);
     --button-primary-bg: var(--color-700);
