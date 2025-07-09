@@ -3,12 +3,8 @@
 *::before,
 *::after {
   box-sizing: border-box;
+  margin: 0;
 }
-
-/* 2. Remove default margin */
-/* * { */
-/*   margin: 0; */
-/* } */
 
 /* Prevent font size inflation */
 html {
@@ -48,8 +44,7 @@ img, picture, video, canvas, svg {
 
 /* Inherit fonts for inputs and buttons */
 input, button, textarea, select {
-  font-family: inherit;
-  font-size: inherit;
+  font: inherit;
 }
 
 /* Make sure textareas without a rows attribute are not tiny */
