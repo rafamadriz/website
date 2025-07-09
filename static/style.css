@@ -125,6 +125,11 @@ a {
     color: var(--link);
 }
 
+/* codeblocks */
+pre {
+    overflow: auto;
+}
+
 a:hover {
     color: var(--bg);
     background-color: var(--link);
