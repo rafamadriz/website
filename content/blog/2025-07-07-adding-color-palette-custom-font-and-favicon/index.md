@@ -15,20 +15,21 @@ The most notable change, is that now I'm using a color palette that respects lig
 <style>
 .palette-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(40px, 1fr));
   padding: 1rem;
+  gap: 1px;
   max-width: 100%;
 }
 
 .color {
-  aspect-ratio: 1;
+  width: 100%;
+  box-shadow: 0 0 0 1px var(--text-muted);
 }
 
 .swatch {
+  aspect-ratio: 1;
   width: 100%;
   height: 100%;
-  box-shadow: 0 25px 25px rgba(0,0,0,0.1); 
-  margin: 0;
 }
 </style>
 
