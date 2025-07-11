@@ -140,11 +140,6 @@ a {
     color: var(--link);
 }
 
-/* codeblocks */
-pre {
-    overflow: auto;
-}
-
 a:hover {
     color: var(--bg);
     background-color: var(--link);
@@ -165,6 +160,11 @@ h6:hover .zola-anchor,
   all: unset;
   color: var(--link);
   cursor: pointer;
+}
+
+/* codeblocks */
+pre {
+    overflow: auto;
 }
 
 .container {
