@@ -149,7 +149,7 @@ a:visited {
     color: var(--text);
 }
 
-a:visited:focus {
+a:focus {
     color: var(--text-muted);
     background-color: var(--bg-alt);
 }
