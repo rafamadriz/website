@@ -150,6 +150,23 @@ a:hover {
     background-color: var(--link);
 }
 
+.zola-anchor {
+    all: unset;
+    color: var(--bg-alt);
+    cursor: pointer;
+}
+
+h2:hover .zola-anchor,
+h3:hover .zola-anchor,
+h4:hover .zola-anchor,
+h5:hover .zola-anchor,
+h6:hover .zola-anchor,
+.zola-anchor:hover {
+  all: unset;
+  color: var(--link);
+  cursor: pointer;
+}
+
 .container {
     margin: 0 auto;
     max-width: 90ch;
@@ -157,7 +174,6 @@ a:hover {
 }
 
 nav {
-    /* padding: 1rem 2rem; */
     display: flex;
     justify-content: space-between;
     align-content: center;
