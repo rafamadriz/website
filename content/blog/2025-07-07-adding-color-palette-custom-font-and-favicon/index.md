@@ -16,9 +16,9 @@ The most notable change, is that now I'm using a color palette that respects lig
 .palette-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(40px, 1fr));
-  padding: 1rem;
   gap: 1px;
   max-width: 100%;
+  margin-bottom: 1.25rem;
 }
 
 .color {

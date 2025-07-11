@@ -132,8 +132,8 @@ p {
     text-wrap: pretty;
 }
 
-p, h1, h2, h3, h4, h5, h6 {
-    padding: 0.5rem;
+header, h1, h2, h3, h4, h5, h6, p, article > ul {
+    margin-bottom: 1.25rem;
 }
 
 a {
