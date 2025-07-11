@@ -145,6 +145,20 @@ a:hover {
     background-color: var(--link);
 }
 
+a:visited {
+    color: var(--text);
+}
+
+a:visited:focus {
+    color: var(--text-muted);
+    background-color: var(--bg-alt);
+}
+
+a:visited:hover {
+    color: var(--text-muted);
+    background-color: var(--bg-alt);
+}
+
 .zola-anchor {
     all: unset;
     color: var(--bg-alt);
