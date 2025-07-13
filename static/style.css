@@ -132,7 +132,7 @@ p {
     text-wrap: pretty;
 }
 
-header, h1, h2, h3, h4, h5, h6, p, article > ul {
+header, h1, h2, h3, h4, h5, h6, p, pre, article > ul {
     margin-bottom: 1.25rem;
 }
 
