@@ -136,25 +136,30 @@ header, h1, h2, h3, h4, h5, h6, p, pre, article > ul {
     margin-bottom: 1.25rem;
 }
 
-a {
+nav a {
+    color: var(--link);
+    text-decoration: none;
+}
+
+main a {
     color: var(--link);
 }
 
-a:hover {
+main a:hover {
     color: var(--bg);
     background-color: var(--link);
 }
 
-a:visited {
+main a:visited {
     color: var(--text);
 }
 
-a:focus {
+main a:focus {
     color: var(--text-muted);
     background-color: var(--bg-alt);
 }
 
-a:visited:hover {
+main a:visited:hover {
     color: var(--text-muted);
     background-color: var(--bg-alt);
 }
