@@ -1,0 +1,51 @@
+/* CSS reset with some bits stolen from Andy Bell and others from Josh Comeau */
+/* Andy: https://piccalil.li/blog/a-more-modern-css-reset/ */
+/* Josh: https://www.joshwcomeau.com/css/custom-css-reset/ */
+
+/* 1. Use a more-intuitive box-sizing model and remove default margin */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+/* 2. Prevent font size inflation */
+/* https://kilianvalkhof.com/2022/css-html/your-css-reset-needs-text-size-adjust-probably/ */
+html {
+  -moz-text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
+}
+
+/* 3. Set core body defaults */
+body {
+  line-height: 1.5;
+}
+
+/* 4. Set shorter line heights on headings and interactive elements */
+h1, h2, h3, h4,
+button, input, label {
+  line-height: 1.1;
+}
+
+/* 5. Avoid text overflows */
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+}
+
+/* 6. Make images easier to work with */
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+}
+
+/* 7. Inherit fonts for inputs and buttons */
+input, button, textarea, select {
+  font: inherit;
+}
+
+/* 8. Make sure textareas without a rows attribute are not tiny */
+textarea:not([rows]) {
+  min-height: 10em;
+}
