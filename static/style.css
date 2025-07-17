@@ -136,32 +136,40 @@ header, nav, h1, h2, h3, h4, h5, h6, p, pre, article > ul {
     margin-bottom: 1.25rem;
 }
 
-nav a {
-    color: var(--link);
-    text-decoration: none;
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+
+    & a {
+        color: var(--link);
+        text-decoration: none;
+    }
 }
 
-main a {
-    color: var(--link);
-}
+main {
+    & a {
+        color: var(--link);
+    }
 
-main a:hover {
-    color: var(--bg);
-    background-color: var(--link);
-}
+    & a:hover {
+        color: var(--bg);
+        background-color: var(--link);
+    }
 
-main a:visited {
-    color: var(--text);
-}
+    & a:visited {
+        color: var(--text);
+    }
 
-main a:focus {
-    color: var(--text-muted);
-    background-color: var(--bg-alt);
-}
+    & a:focus {
+        color: var(--text-muted);
+        background-color: var(--bg-alt);
+    }
 
-main a:visited:hover {
-    color: var(--text-muted);
-    background-color: var(--bg-alt);
+    & a:visited:hover {
+        color: var(--text-muted);
+        background-color: var(--bg-alt);
+    }
 }
 
 .zola-anchor {
@@ -192,27 +200,23 @@ pre {
     padding: 0 1rem;
 }
 
-nav {
-    display: flex;
-    justify-content: space-between;
-    align-content: center;
-}
+ul {
+    &.archive-list {
+        list-style: none;
+        margin: 0;
+        padding: 0.5em;
+    }
 
-ul.archive-list {
-    list-style: none;
-    margin: 0;
-    padding: 0.5em;
-}
+    &.archive-list li {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 1rem;
+    }
 
-ul.archive-list li {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 1rem;
-}
-
-ul.archive-list li:nth-child(odd) {
-  background-color: var(--bg-alt);
+    &.archive-list li:nth-child(odd) {
+        background-color: var(--bg-alt);
+    }
 }
 
 blockquote footer {
