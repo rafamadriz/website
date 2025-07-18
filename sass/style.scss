@@ -28,6 +28,10 @@
   --button-secondary-border: var(--color-500);
   --badge-bg: var(--color-800);
   --link: var(--color-400);
+  /* Links */
+  --link: var(--indigo-200);
+  --link-visited: var(--teal-200);
+  --link-visited-hover: var(--teal-950);
 }
 
 /* Dark mode overrides */
@@ -46,6 +50,10 @@
     --button-secondary-border: var(--color-700);
     --badge-bg: var(--color-500);
     --link: var(--color-700);
+    /* Links */
+    --link: var(--indigo-800);
+    --link-visited: var(--teal-950);
+    --link-visited-hover: var(--teal-50);
   }
 }
 
@@ -96,25 +104,35 @@ nav {
 main {
     & a {
         color: var(--link);
+        text-underline-offset: 0.25em;
+        text-decoration-thickness: 2px;
+    }
+
+    & a:visited {
+        color: var(--link-visited);
+    }
+
+    & a:visited:hover {
+        color: var(--link-visited-hover);
+        background-color: var(--link-visited);
+        text-decoration: none;
+    }
+
+    & a:focus {
+        color: var(--link-visited-hover);
+        background-color: var(--link-visited);
     }
 
     & a:hover {
         color: var(--bg);
         background-color: var(--link);
+        text-decoration: none;
     }
 
-    & a:visited {
-        color: var(--text);
-    }
-
-    & a:focus {
-        color: var(--text-muted);
-        background-color: var(--bg-alt);
-    }
-
-    & a:visited:hover {
-        color: var(--text-muted);
-        background-color: var(--bg-alt);
+    & a:hover:active {
+        color: var(--link);
+        background-color: var(--bg);
+        text-decoration: none;
     }
 }
 
@@ -158,6 +176,9 @@ ul {
         justify-content: space-between;
         align-items: center;
         padding: 0 1rem;
+        & a {
+            text-decoration: none;
+        }
     }
 
     &.archive-list li:nth-child(odd) {
