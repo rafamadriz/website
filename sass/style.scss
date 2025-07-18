@@ -322,25 +322,25 @@ pre {
 }
 
 ul {
-    &.archive-list {
-        list-style: none;
-        margin: 0;
-        padding: 0.5em;
-    }
+  &.archive-list {
+    list-style: none;
+    margin: 0;
+    padding: 0.5em;
+  }
 
-    &.archive-list li {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 0 1rem;
-        & a {
-            text-decoration: none;
-        }
+  &.archive-list li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 1rem;
+    & a {
+      text-decoration: none;
     }
+  }
 
-    /* &.archive-list li:nth-child(odd) { */
-    /*     background-color: var(--bg-alt); */
-    /* } */
+  /* &.archive-list li:nth-child(odd) { */
+  /*     background-color: var(--bg-alt); */
+  /* } */
 }
 
 blockquote footer {
