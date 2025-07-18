@@ -122,6 +122,26 @@
   --link: var(--indigo-200);
   --link-visited: var(--teal-200);
   --link-visited-hover: var(--teal-950);
+
+  /* Info card (green) */
+  --card-info-bg: var(--green-950);
+  --card-info-border: var(--green-600);
+  --card-info-text: var(--green-100);
+
+  /* Warning card (orange/yellow) */
+  --card-warn-bg: var(--yellow-950);
+  --card-warn-border: var(--yellow-600);
+  --card-warn-text: var(--yellow-100);
+
+  /* Danger/Error card (red) */
+  --card-error-bg: var(--red-950);
+  --card-error-border: var(--red-600);
+  --card-error-text: var(--red-100);
+
+  /* Note card (blue) */
+  --card-note-bg: var(--blue-950);
+  --card-note-border: var(--blue-600);
+  --card-note-text: var(--blue-100);
 }
 
 /* Dark mode overrides */
@@ -144,7 +164,54 @@
     --link: var(--indigo-800);
     --link-visited: var(--teal-950);
     --link-visited-hover: var(--teal-50);
+
+    --card-info-bg: var(--green-50);
+    --card-info-border: var(--green-500);
+    --card-info-text: var(--green-950);
+
+    --card-warn-bg: var(--yellow-50);
+    --card-warn-border: var(--yellow-500);
+    --card-warn-text: var(--yellow-950);
+
+    --card-error-bg: var(--red-50);
+    --card-error-border: var(--red-500);
+    --card-error-text: var(--red-950);
+
+    --card-note-bg: var(--blue-50);
+    --card-note-border: var(--blue-500);
+    --card-note-text: var(--blue-950);
   }
+}
+
+.card {
+  padding: 1rem;
+  border-radius: 0.5rem;
+  border: 2px solid;
+  margin-bottom: 1.25rem;
+}
+
+.card--info {
+  background-color: var(--card-info-bg);
+  border-color: var(--card-info-border);
+  color: var(--card-info-text);
+}
+
+.card--warn {
+  background-color: var(--card-warn-bg);
+  border-color: var(--card-warn-border);
+  color: var(--card-warn-text);
+}
+
+.card--error {
+  background-color: var(--card-error-bg);
+  border-color: var(--card-error-border);
+  color: var(--card-error-text);
+}
+
+.card--note {
+  background-color: var(--card-note-bg);
+  border-color: var(--card-note-border);
+  color: var(--card-note-text);
 }
 
 @font-face {
