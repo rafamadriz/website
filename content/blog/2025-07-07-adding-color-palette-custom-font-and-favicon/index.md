@@ -1,5 +1,6 @@
 +++
 title = "Devlog #01: Adding color palette, custom font and favicon"
+description = "Documenting my website improvements with accessibility in mind - implementing semantic HTML, color palettes for light and dark mode, custom fonts, and creating a favicon"
 +++
 
 **NOTE:** This is the first part of a series of posts where I'm going to be documenting the process of improving my website, or at least creating something that's more my taste.

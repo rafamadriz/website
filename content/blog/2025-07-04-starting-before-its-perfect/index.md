@@ -1,5 +1,6 @@
 +++
 title = "Starting before it's perfect"
+description = "Overcoming analysis paralysis and finally launching my personal website after three years of planning - lessons on perfectionism and the value of just starting"
 +++
 
 More than 3 years ago I bought my first domain, with the main goal of building my own website. I have always liked the idea of having a place of total ownership over what I can do, just to share things, experiment and learn about the web.

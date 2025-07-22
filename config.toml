@@ -3,8 +3,8 @@ base_url = "https://rafaelmadriz.com"
 
 
 # The site title and description; used in feeds by default.
-title = "Rafael's Blog"
-description = ""
+title = "Rafael Madriz"
+description = "Aspiring programmer trying to create a home for myself on the WWW."
 
 author = "Rafael Madriz"
 

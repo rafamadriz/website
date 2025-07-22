@@ -1,5 +1,6 @@
 +++
 title = "Devlog #02: Changing hosting provider and CSS improvements"
+description = "My journey migrating from Fastmail to Cloudflare for website hosting, plus CSS enhancements including better typography, code blocks, font declarations, and anchor links"
 +++
 
 My plan was to use Fastmail's feature for [hosting websites](https://www.fastmail.help/hc/en-us/articles/1500000280141-How-to-set-up-a-website), since I'm already hosting my email with them (amazing service by the way), and changing hosting would mean modifying nameservers and messing with DNS settings that I don't want to mess with because I'm no expert and anything wrong can cause some downtime for your email, which is not good if someone happens to send you an important email during that time.
