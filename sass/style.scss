@@ -24,11 +24,10 @@ body {
     background-color: var(--bg);
     color: var(--text);
     font-family: 'Atkinson', sans;
-    font-size: 1.75rem;
+    font-size: 1.3rem;
     display: flex;
     flex-direction: column;
 }
-
 
 p {
     text-wrap: pretty;
@@ -38,7 +37,7 @@ p {
 
 // Navbar {{{
 .navbar {
-    font-size: 1.5rem;
+    font-size: 1.4rem;
     border-bottom: 2px solid var(--indigo-300);
     background-color: var(--indigo-50);
 }
@@ -65,27 +64,15 @@ nav {
         background-color: var(--link);
         color: var(--bg);
     }
-
-    & .home a {
-        border-right: 2px solid var(--indigo-300);
-        border-left: 2px solid var(--indigo-300);
-    }
-
-    & .nav-links a {
-        border-left: 2px solid var(--indigo-300);
-    }
-
-    & .nav-links a:last-child {
-        border-right: 2px solid var(--indigo-300);
-    }
 }
 // }}}
 
 main {
-    padding: var(--space-16) 0;
+    padding: var(--space-5) var(--space-3);
     max-width: 60rem;
-    min-width: 60rem;
     align-self: center;
+    width: 100%;
+
     & a {
         color: var(--link);
         text-underline-offset: 0.25em;
