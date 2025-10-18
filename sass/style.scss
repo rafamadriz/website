@@ -107,28 +107,23 @@ pre {
     margin: 0 auto;
     max-width: 90ch;
     padding: 0 1rem;
+table {
+  border-collapse: collapse;
+  width: 100%;
 }
 
-ul {
-  &.archive-list {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-  }
+table a {
+    text-decoration: none;
+}
 
-  &.archive-list li {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 1rem;
-    & a {
-      text-decoration: none;
-    }
-  }
+td, th {
+  border: 2px solid var(--indigo-300);
+  text-align: left;
+  padding: var(--space-3);
+}
 
-  /* &.archive-list li:nth-child(odd) { */
-  /*     background-color: var(--bg-alt); */
-  /* } */
+tr:nth-child(even) {
+  background-color: var(--indigo-50);
 }
 
 blockquote footer {
