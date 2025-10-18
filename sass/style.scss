@@ -125,25 +125,7 @@ h6:hover .zola-anchor,
 /* codeblocks */
 pre {
     overflow: auto;
-}
-
-table {
-  border-collapse: collapse;
-  width: 100%;
-}
-
-table a {
-    text-decoration: none;
-}
-
-td, th {
-  border: 2px solid var(--indigo-300);
-  text-align: left;
-  padding: var(--space-3);
-}
-
-tr:nth-child(even) {
-  background-color: var(--indigo-50);
+    font-size: 1rem;
 }
 
 blockquote footer {

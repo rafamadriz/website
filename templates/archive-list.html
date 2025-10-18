@@ -1,22 +1,42 @@
 {% set blog_pages = get_section(path="blog/_index.md") %}
 
 {% for _, posts in blog_pages.pages | group_by(attribute="year") %}
-<table class="archive-list">
-    <tr>
-        <th>Article</th>
-        <th>Date</th>
-    </tr>
+<ul class="archive-list">
     {% for post in posts %}
-    <tr>
-        <td>
-            <a href="{{ post.permalink }}">
-                {{ post.title }}
-            </a>
-        </td>
-        <td>
-            <time datetime="{{post.date}}">{{post.date}}</time>
-        </td>
-    </tr>
+    <li>
+        <a href="{{ post.permalink }}">
+            {{ post.title }}
+        </a>
+        <time datetime="{{post.date}}">{{ post.date | date(format="%d %B %Y") }}</time>
+    </li>
     {% endfor %}
-</table>
+</ul>
 {% endfor %}
+
+<style>
+    .archive-list {
+        padding: 0;
+        list-style-type: none;
+    }
+
+    li {
+        display: flex;
+        flex-direction: column;
+        padding: var(--space-3) 0;
+        border-bottom: 2px solid var(--indigo-400);
+    }
+
+    li a, li time {
+        display: inline-block;
+        text-decoration: none;
+        width: fit-content;
+    }
+
+    li time {
+        font-size: 1rem;
+    }
+
+    li:nth-child(even) {
+        background-color: var(--indigo-50);
+    }
+</style>
