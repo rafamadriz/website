@@ -17,64 +17,88 @@
     font-style: italic;
     font-display: swap
 }
+// }}}
 
-
+// Base {{{
 body {
-    font-size: 16px;
     background-color: var(--bg);
     color: var(--text);
     font-family: 'Atkinson', sans;
-    font-size: 1.2rem;
+    font-size: 1.75rem;
+    display: flex;
+    flex-direction: column;
 }
+
 
 p {
     text-wrap: pretty;
+    margin-bottom: var(--space-6);
+}
+// }}}
+
+// Navbar {{{
+.navbar {
+    font-size: 1.5rem;
+    border-bottom: 2px solid var(--indigo-300);
+    background-color: var(--indigo-50);
 }
 
-header, nav, h1, h2, h3, h4, h5, h6, p, pre, article > ul {
-    margin-bottom: 1.25rem;
+.home, .nav-links {
+    display: flex;
 }
+
 
 nav {
     display: flex;
+    max-width: 60rem;
+    margin: auto;
     justify-content: space-between;
-    align-content: center;
 
     & a {
         color: var(--link);
         text-decoration: none;
+        padding: var(--space-3);
+        font-weight: bold;
+    }
+
+    & a:hover {
+        background-color: var(--link);
+        color: var(--bg);
+    }
+
+    & .home a {
+        border-right: 2px solid var(--indigo-300);
+        border-left: 2px solid var(--indigo-300);
+    }
+
+    & .nav-links a {
+        border-left: 2px solid var(--indigo-300);
+    }
+
+    & .nav-links a:last-child {
+        border-right: 2px solid var(--indigo-300);
     }
 }
+// }}}
 
 main {
+    padding: var(--space-16) 0;
+    max-width: 60rem;
+    min-width: 60rem;
+    align-self: center;
     & a {
         color: var(--link);
         text-underline-offset: 0.25em;
         text-decoration-thickness: 2px;
     }
 
-    & a:visited {
-        color: var(--link-visited);
-    }
-
-    & a:visited:hover {
-        color: var(--link-visited-hover);
-        background-color: var(--link-visited);
-        text-decoration: none;
-    }
-
-    & a:focus {
-        color: var(--link-visited-hover);
-        background-color: var(--link-visited);
-    }
-
-    & a:hover {
+    & a:hover, a:focus {
         color: var(--bg);
         background-color: var(--link);
         text-decoration: none;
     }
 
-    & a:hover:active {
+    & a:active {
         color: var(--link);
         background-color: var(--bg);
         text-decoration: none;
@@ -103,10 +127,6 @@ pre {
     overflow: auto;
 }
 
-.container {
-    margin: 0 auto;
-    max-width: 90ch;
-    padding: 0 1rem;
 table {
   border-collapse: collapse;
   width: 100%;

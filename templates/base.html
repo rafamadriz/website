@@ -2,37 +2,30 @@
 <html lang="en">
 
 <head>
-  <meta charset="utf-8">
-  {% block title %} {% endblock title %}
-  <link rel="stylesheet" href="/style.css">
-  <link rel="stylesheet" href="/reset.css">
-  <link rel="preload" href="./fonts/AtkinsonHyperlegibleNextVF-Variable.woff2" as="font" type="font/woff2" crossorigin="anonymous">
-  <link rel="icon" href="/favicon.jpg" type="image/jpg">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="/style.css">
+    {% block title %} {% endblock title %}
+    <link rel="preload" href="/fonts/AtkinsonHyperlegibleNextVF-Variable.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+    <link rel="icon" href="/favicon.jpg" type="image/jpg">
 </head>
 
 <body>
+    <div class="navbar">
+        <nav>
+            <div class="home">
+                <a href="/">Home</a>
+            </div>
+            <div class="nav-links">
+                <a href="/blog">Archive</a>
+                <!-- <a href="/blog">About</a> -->
+            </div>
+        </nav>
+    </div>
 
-  <div class="container">
-
-      <nav>
-          <div class="left-link">
-            <a href="/"><strong>~rafaelmadriz.com</strong></a>
-          </div>
-
-          <!-- <div class="right-links"> -->
-          <!--   <a href="/blog">Archive</a> -->
-          <!-- </div> -->
-      </nav>
-
-      <main>
-        <div class="content">
-          {% block content %} {% endblock content %}
-        </div>
-      </main>
-
-  </div>
-
+    <main>
+        {% block content %} {% endblock content %}
+    </main>
 </body>
 
 </html>
