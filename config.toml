@@ -1,7 +1,6 @@
 # The URL the site will be built for
 base_url = "https://rafaelmadriz.com"
 
-
 # The site title and description; used in feeds by default.
 title = "Rafael Madriz"
 description = "Aspiring programmer trying to create a home for myself on the WWW."
