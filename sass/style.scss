@@ -1,0 +1,137 @@
+@use "reset";
+@use "variables";
+
+// Typography {{{
+@font-face {
+    font-family: "Atkinson";
+    src: url('./fonts/AtkinsonHyperlegibleNextVF-Variable.woff2') format('woff2-variations');
+    font-weight: 200 800;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Atkinson";
+    src: url('./fonts/AtkinsonHyperlegibleNextVF-Variable.woff2') format('woff2-variations');
+    font-weight: 200 800;
+    font-style: italic;
+    font-display: swap
+}
+
+
+body {
+    font-size: 16px;
+    background-color: var(--bg);
+    color: var(--text);
+    font-family: 'Atkinson', sans;
+    font-size: 1.2rem;
+}
+
+p {
+    text-wrap: pretty;
+}
+
+header, nav, h1, h2, h3, h4, h5, h6, p, pre, article > ul {
+    margin-bottom: 1.25rem;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+
+    & a {
+        color: var(--link);
+        text-decoration: none;
+    }
+}
+
+main {
+    & a {
+        color: var(--link);
+        text-underline-offset: 0.25em;
+        text-decoration-thickness: 2px;
+    }
+
+    & a:visited {
+        color: var(--link-visited);
+    }
+
+    & a:visited:hover {
+        color: var(--link-visited-hover);
+        background-color: var(--link-visited);
+        text-decoration: none;
+    }
+
+    & a:focus {
+        color: var(--link-visited-hover);
+        background-color: var(--link-visited);
+    }
+
+    & a:hover {
+        color: var(--bg);
+        background-color: var(--link);
+        text-decoration: none;
+    }
+
+    & a:hover:active {
+        color: var(--link);
+        background-color: var(--bg);
+        text-decoration: none;
+    }
+}
+
+.zola-anchor {
+    all: unset;
+    color: var(--bg-alt);
+    cursor: pointer;
+}
+
+h2:hover .zola-anchor,
+h3:hover .zola-anchor,
+h4:hover .zola-anchor,
+h5:hover .zola-anchor,
+h6:hover .zola-anchor,
+.zola-anchor:hover {
+  all: unset;
+  color: var(--link);
+  cursor: pointer;
+}
+
+/* codeblocks */
+pre {
+    overflow: auto;
+}
+
+.container {
+    margin: 0 auto;
+    max-width: 90ch;
+    padding: 0 1rem;
+}
+
+ul {
+  &.archive-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  &.archive-list li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 1rem;
+    & a {
+      text-decoration: none;
+    }
+  }
+
+  /* &.archive-list li:nth-child(odd) { */
+  /*     background-color: var(--bg-alt); */
+  /* } */
+}
+
+blockquote footer {
+    display: flex;
+    justify-content: flex-end;
+}
