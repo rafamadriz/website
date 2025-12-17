@@ -1,4 +1,5 @@
 import { VentoPlugin } from "eleventy-plugin-vento"
+import { eleventyImageTransformPlugin } from "@11ty/eleventy-img"
 
 // CUSTOM PLUGINS
 import sassPlugin from "./src/_11ty/sassPlugin.js"
@@ -38,6 +39,12 @@ export default async function(eleventyConfig) {
 
     // PLUGINS
     eleventyConfig.addPlugin(sassPlugin),
+    eleventyConfig.addPlugin(eleventyImageTransformPlugin, {
+        formats: [ "avif" ],
+        sharpOptions: {
+            animated: true,
+        },
+    }),
     eleventyConfig.addPlugin(VentoPlugin) // recommended to load as the last plugin
 }
 
