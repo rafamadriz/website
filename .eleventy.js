@@ -22,4 +22,7 @@ export const config =  {
         input:  "src",
         output: "public",
     },
+    // SOURCE: https://learn-eleventy.pages.dev/lesson/3/#getting-started-with-nunjucks
+    markdownTemplateEngine: "vto",
+    htmlTemplateEngine:     "vto",
 }
