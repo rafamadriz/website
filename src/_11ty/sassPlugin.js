@@ -12,7 +12,7 @@ export default function (eleventyConfig) {
 
         compile: function (inputContent, inputPath) {
             let parsed = path.parse(inputPath);
-            // Don’t compile file names that start with an underscore
+            // Don't compile file names that start with an underscore
             if(parsed.name.startsWith("_")) {
                 return
             }
