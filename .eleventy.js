@@ -3,8 +3,9 @@ import { eleventyImageTransformPlugin } from "@11ty/eleventy-img"
 import footnote_plugin from "markdown-it-footnote"
 import { IdAttributePlugin } from "@11ty/eleventy"
 
-// CUSTOM PLUGINS
+// CUSTOM PLUGINS/UTILS
 import sassPlugin from "./src/_11ty/sassPlugin.js"
+import slugifyString from "./src/_utils/slugify.js"
 
 // SOURCE: https://github.com/vimtor/eleventy-plugin-external-links
 import { parse } from "node-html-parser"
@@ -30,6 +31,9 @@ const openLinksNewTab = (content, outputPath) => {
 export default async function(eleventyConfig) {
     // TRANSFORMS
     eleventyConfig.addTransform("external-links", openLinksNewTab)
+
+    // FILTERS
+    eleventyConfig.addFilter("slugify", slugifyString)
 
     // COLLECTIONS
     eleventyConfig.addCollection("posts", function(CollectionApi) {
