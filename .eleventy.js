@@ -2,6 +2,7 @@ import { VentoPlugin } from "eleventy-plugin-vento"
 import { eleventyImageTransformPlugin } from "@11ty/eleventy-img"
 import footnote_plugin from "markdown-it-footnote"
 import { IdAttributePlugin } from "@11ty/eleventy"
+import { InputPathToUrlTransformPlugin } from "@11ty/eleventy";
 
 // CUSTOM PLUGINS/UTILS
 import sassPlugin from "./src/_11ty/sassPlugin.js"
@@ -53,6 +54,7 @@ export default async function(eleventyConfig) {
     // PLUGINS
     eleventyConfig.addPlugin(sassPlugin),
     eleventyConfig.addPlugin(IdAttributePlugin)
+    eleventyConfig.addPlugin(InputPathToUrlTransformPlugin)
     eleventyConfig.amendLibrary("md", (mdLib) => mdLib.use(footnote_plugin))
     eleventyConfig.addPlugin(eleventyImageTransformPlugin, {
         formats: [ "avif" ],
