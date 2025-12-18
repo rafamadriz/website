@@ -23,8 +23,7 @@ const openLinksNewTab = (content, outputPath) => {
                 link.setAttribute("rel", "noopener");
             }
         });
-        const newContent = root.toString();
-        return `<!DOCTYPE html>${newContent}`
+        return root.toString()
     }
     return content;
 }
