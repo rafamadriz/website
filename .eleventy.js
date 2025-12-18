@@ -35,6 +35,13 @@ export default async function(eleventyConfig) {
     // FILTERS
     eleventyConfig.addFilter("slugify", slugifyString)
 
+    // Remove .html from `page.url`
+    eleventyConfig.addUrlTransform((page) => {
+        if (page.url.endsWith(".html")) {
+            return page.url.slice(0, -1 * ".html".length)
+        }
+    })
+
     // COLLECTIONS
     eleventyConfig.addCollection("posts", function(CollectionApi) {
         return CollectionApi
