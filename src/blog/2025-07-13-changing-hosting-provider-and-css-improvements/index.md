@@ -1,5 +1,6 @@
 ---
-title: "Devlog #02: Changing hosting provider and CSS improvements"
+title: "Changing hosting provider and CSS improvements"
+shortTitle: "Hosting and CSS improvements"
 date: 2025-07-13
 description: "My journey migrating from Fastmail to Cloudflare for website hosting, plus CSS enhancements including better typography, code blocks, font declarations, and anchor links"
 ---
@@ -57,8 +58,6 @@ I did some CSS tweaks to progressively improve my website.
     I also added color to links with the `focus` event, another nice feature to always know what was the last link you clicked. I noticed this on [Protesilaos Stavrou's](https://protesilaos.com/) website and really liked it. Finally, external links are opened in a new tab; this is my personal preference. Every time I'm reading an article and they share a link to another interesting article, I get annoyed when the page gets replaced. I know it's easy to open links in a new tab (middle click on the mouse does that), but on mobile you have to hold and then select the "open in a new tab" option. I simply prefer opening links in a new tab by default.
 
 That's it for now, once again I learned a bunch of stuff. If you are interested in the source code, you can find it on [here](https://github.com/rafamadriz/website).
-
----
 
 [^1]: DKIM helps receivers know your message is not spam, by electronically signing your email to verify it was sent by you.
 

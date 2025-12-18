@@ -1,5 +1,6 @@
 ---
-title: "Devlog #01: Adding color palette, custom font and favicon"
+title: "Adding color palette, custom font and favicon"
+shortTitle: "Color palette, font and favicon"
 date: 2025-07-07
 description: "Documenting my website improvements with accessibility in mind - implementing semantic HTML, color palettes for light and dark mode, custom fonts, and creating a favicon"
 ---
