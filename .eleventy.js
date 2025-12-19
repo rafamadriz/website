@@ -31,16 +31,15 @@ const openLinksNewTab = (content, outputPath) => {
 export default async function(eleventyConfig) {
     // TRANSFORMS
     eleventyConfig.addTransform("external-links", openLinksNewTab)
-
-    // FILTERS
-    eleventyConfig.addFilter("slugify", slugifyString)
-
     // Remove .html from `page.url`
     eleventyConfig.addUrlTransform((page) => {
         if (page.url.endsWith(".html")) {
             return page.url.slice(0, -1 * ".html".length)
         }
     })
+
+    // FILTERS
+    eleventyConfig.addFilter("slugify", slugifyString)
 
     // COLLECTIONS
     eleventyConfig.addCollection("posts", function(CollectionApi) {
