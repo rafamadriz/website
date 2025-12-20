@@ -7,6 +7,10 @@ body {
     font-weight: 425;
 }
 
+::selection {
+    background-color: var(--color-accent-100);
+}
+
 pre code {
     display: block;
     overflow-x: auto;
@@ -35,6 +39,12 @@ article {
     }
 
     nav.toc {
+        a {
+            &:hover, &:focus {
+                text-decoration: underline wavy var(--color-accent-700);
+                text-decoration-thickness: 2px;
+            }
+        }
         grid-area: toc;
         padding-inline-end: var(--space-s-m);
         padding-block-start: var(--space-s-m);
@@ -71,6 +81,22 @@ article {
         }
         h4 {
             font-size: var(--step-1);
+        }
+
+        a {
+            &:hover, &:focus {
+                text-decoration: underline wavy var(--color-accent-700);
+                text-decoration-thickness: 2px;
+            }
+
+
+            &:visited {
+                color: var(--color-yellow-950);
+
+                &:hover, &:focus {
+                    text-decoration-color: var(--color-yellow-900);
+                }
+            }
         }
 
         // https://bell.bz/my-favourite-3-lines-of-css/
