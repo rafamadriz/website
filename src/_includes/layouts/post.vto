@@ -7,12 +7,16 @@
             <h1>{{ title }}</h1>
         </header>
 
-        <nav class="toc">
-            {{ content |> toc }}
-        </nav>
-
-        <section class="content">
-            {{ content }}
+        <section class="main-content">
+            <details open="true">
+                <summary>Table of contents</summary>
+                <nav class="toc">
+                    {{ content |> toc }}
+                </nav>
+            </details>
+            <div class="content">
+                {{ content }}
+            </div>
         </section>
 
     </article>

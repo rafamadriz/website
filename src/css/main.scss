@@ -9,6 +9,19 @@ body {
     color: var(--color-fg)
 }
 
+details {
+    background-color: var(--color-base-300);
+    max-width: 63ch;
+    padding: var(--space-xs-s);
+    border: 2px solid var(--color-base-400);
+    border-radius: 5px;
+    margin-block-end: 1.3em;
+
+    ul {
+        padding-block-start: var(--space-xs-s);
+    }
+}
+
 ::selection {
     background-color: var(--color-accent-100);
 }
@@ -42,21 +55,18 @@ nav.toc ul {
     }
 }
 
-article {
-    max-width: 95rem;
-    display: grid;
-    margin-inline: auto;
-    grid-template-columns:
-    minmax(20rem, 1fr)   // left gutter / toc space
-    minmax(360px, 66ch)  // centered content column
-    minmax(0, 1fr);      // right gutter
+.article-wrapper {
+    display: flex;
+    justify-content: center;
+}
 
-    grid-template-areas: 
-    ". header ."
-    "toc content .";
+article {
+    min-width: 360px;
+    max-width: max-content;
+    padding: var(--space-s-m);
+    max-width: 95rem;
 
     header {
-        grid-area: header;
         padding-block-end: 3em;
 
         h1 {
@@ -64,18 +74,7 @@ article {
         }
     }
 
-        grid-area: toc;
-        padding-inline-end: var(--space-s-m);
-        padding-block-start: var(--space-s-m);
-        position: sticky;
-        top: 0;
-        align-self: self-start;
-
-    }
-
-    section.content {
-        grid-area: content;
-
+    section.main-content {
         // Font family for code is DejaVu Sans Mono
         // and it looks much bigger than Alegreya at same size,
         // which makes inline code look weird. To fix use one step less
@@ -98,7 +97,11 @@ article {
             font-size: var(--step-1);
         }
 
-
+        .content {
+            max-width: 66ch;
+            a {
+                &:visited {
+                    color: var(--color-yellow-950);
 
                     &:hover, &:focus {
                         text-decoration-color: var(--color-yellow-900);
@@ -111,7 +114,7 @@ article {
         // https://every-layout.dev/layouts/stack/
         // every direct sibling child element of .stack has margin-block-start added to it.
         // This is achieved by the Lobotomised Owl selector, but the > combinator is added to prevent margin being added recursively
-        > * + * {
+        .content > * + * {
             margin-block-start: var(--flow-space, 1.3em);
         }
     }
