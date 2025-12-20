@@ -1,14 +1,14 @@
 <ul class="archive-list">
     {{ for post of collections.posts }}
-    {{ set data = post.data }}
-    {{ set title = data.title }}
-    {{ set date = data.page.date }}
-    {{ set url = data.page.url }}
-    <li>
-        <a href="{{ url }}">
-            {{ title }}
-        </a>
-        <time datetime="{{ date.toUTCString() }}">{{ Intl.DateTimeFormat("en-GB", { day: "2-digit", month: "long", year: "numeric", timeZone: "UTC"}).format(date) }}</time>
-    </li>
+        {{ set data = post.data }}
+        {{ set title = data.title }}
+        {{ set date = data.page.date }}
+        {{ set url = data.page.url }}
+        <li>
+            <a href="{{ url }}">
+                {{ title }}
+            </a>
+            <time datetime="{{ date.toUTCString() }}">{{ Intl.DateTimeFormat("en-GB", { day: "2-digit", month: "long", year: "numeric", timeZone: "UTC"}).format(date) }}</time>
+        </li>
     {{ /for }}
 </ul>

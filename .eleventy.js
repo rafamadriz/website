@@ -1,7 +1,7 @@
 import { VentoPlugin } from "eleventy-plugin-vento"
 import { eleventyImageTransformPlugin } from "@11ty/eleventy-img"
 import footnote_plugin from "markdown-it-footnote"
-import { InputPathToUrlTransformPlugin } from "@11ty/eleventy";
+import { InputPathToUrlTransformPlugin } from "@11ty/eleventy"
 import pluginTOC from "@uncenter/eleventy-plugin-toc"
 import markdownItAnchor from "markdown-it-anchor"
 
