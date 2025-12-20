@@ -4,7 +4,7 @@
   "type": "module",
   "scripts": {
     "build": "npx @11ty/eleventy",
-    "start": "npx @11ty/eleventy --serve --incremental",
+    "start": "npx @11ty/eleventy --serve --ignore-initial",
     "images": "sh ./src/scripts/convert_to_avif_and_delete_original.sh"
   },
   "devDependencies": {
