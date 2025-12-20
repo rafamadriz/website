@@ -58,7 +58,7 @@ export default async function(eleventyConfig) {
     eleventyConfig.addPlugin(pluginTOC, {
         ul: true,
         wrapper: (toc) => {
-            if (parse(toc).querySelectorAll("li").length < 3) return ""
+            if (parse(toc).querySelectorAll("li").length < 3) return false
             return `${toc}`
         }
     })
