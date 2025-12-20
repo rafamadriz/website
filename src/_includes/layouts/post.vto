@@ -1,26 +1,24 @@
 {{ layout  "layouts/base.vto" }}
 
-<div class="article-wrapper">
-    <article>
+<article>
+    <header>
+        <h1>{{ title }}</h1>
+    </header>
 
-        <header>
-            <h1>{{ title }}</h1>
-        </header>
+    <section class="main-content">
+        {{ if content |> toc }}
+        <details open="true">
+            <summary>Table of contents</summary>
+            <nav class="toc">
+                {{ content |> toc }}
+            </nav>
+        </details>
+        {{ /if }}
 
-        <section class="main-content">
-            {{ if content |> toc }}
-            <details open="true">
-                <summary>Table of contents</summary>
-                <nav class="toc">
-                    {{ content |> toc }}
-                </nav>
-            </details>
-            {{ /if }}
-            <div class="content">
-                {{ content }}
-            </div>
-        </section>
+        <div class="content">
+            {{ content }}
+        </div>
+    </section>
 
-    </article>
-</div>
+</article>
 {{ /layout }}

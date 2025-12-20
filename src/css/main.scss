@@ -53,16 +53,7 @@ nav.toc ul {
     }
 }
 
-.article-wrapper {
-    display: flex;
-    justify-content: center;
-}
-
 article {
-    min-width: 360px;
-    max-width: max-content;
-    padding: var(--space-s-m);
-
     header {
         max-width: 66ch;
         padding-block-end: 3em;
