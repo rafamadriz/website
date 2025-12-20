@@ -10,3 +10,7 @@ my website. If you want to send any recommendation or want to get in touch, feel
 free to send an email: `hello at rafaelmadriz.com`
 
 You can also find me in [Github](https://github.com/rafamadriz) and [Bluesky](https://bsky.app/profile/rafaelmadriz.com).
+
+# Posts
+
+{{ include "partials/post-list.vto" }}
