@@ -1,0 +1,75 @@
+// CSS reset with some bits from Andy Bell and others from Josh Comeau
+// Andy: https://piccalil.li/blog/a-more-modern-css-reset/
+// Josh: https://www.joshwcomeau.com/css/custom-css-reset/
+
+// Use a more-intuitive box-sizing model
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+// Remove all default margin for better authored CSS, with exception of dialog
+// which is centered in viewport. That's a reasonable default
+*:not(dialog) {
+  margin: 0;
+}
+
+// Prevent font size inflation
+// https://kilianvalkhof.com/2022/css-html/your-css-reset-needs-text-size-adjust-probably/
+html {
+  -moz-text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
+}
+
+// Set core body defaults
+body {
+  line-height: 1.5;
+}
+
+// Set shorter line heights on headings and interactive elements
+h1, h2, h3, h4,
+button, input, label {
+  line-height: 1.1;
+}
+
+// Avoid text overflows
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+}
+
+// Not supported on Firefox:
+// https://caniuse.com/mdn-css_properties_text-wrap_pretty
+// More about pretty option here:
+// https://www.joshwcomeau.com/css/custom-css-reset/#nine-improve-line-wrapping-10
+p {
+  text-wrap: pretty;
+}
+
+// Balance text wrapping on headings
+h1, h2, h3, h4, h5, h6 {
+  text-wrap: balance;
+}
+
+// Make images easier to work with
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+}
+
+// Inherit fonts for inputs and buttons
+input, button, textarea, select {
+  font-family: inherit;
+  font-size: inherit;
+}
+
+// Make sure textareas without a rows attribute are not tiny
+textarea:not([rows]) {
+  min-height: 10em;
+}
+
+// Anything that has been anchored to should have extra scroll margin
+:target {
+  scroll-margin-block: 3ex;
+}

@@ -4,6 +4,13 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta charset="utf-8">
         <title>{{ title }}</title>
+        {{#- SOURCE: https://github.com/zachleat/zachleat.com/blob/a9ef5f894aa81a93f62664c90c394e828cf5fbc5/_includes/layouts/base.liquid#L45-L50 -#}}
+        {{#- Critical CSS in production, blocking stylesheet for local dev for better livereload -#}}
+        {{ if eleventy.env.runMode === "serve" }}
+            <link rel="stylesheet" href="/css/main.css">
+        {{ else }}
+            <style> {{ inlined.css["main"] }} </style>
+        {{ /if }}
     </head>
 
     <body>
