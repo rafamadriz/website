@@ -32,6 +32,9 @@ export default async function(eleventyConfig) {
     // COPY TO OUTPUT FOLDER
     eleventyConfig.addPassthroughCopy("src/static")
 
+    // FILTERS
+    eleventyConfig.addFilter("slugify", slugifyString)
+
     // TRANSFORMS
     eleventyConfig.addTransform("external-links", openLinksNewTab)
     // Remove .html from `page.url`
@@ -40,9 +43,6 @@ export default async function(eleventyConfig) {
             return page.url.slice(0, -1 * ".html".length)
         }
     })
-
-    // FILTERS
-    eleventyConfig.addFilter("slugify", slugifyString)
 
     // COLLECTIONS
     eleventyConfig.addCollection("posts", function(CollectionApi) {
