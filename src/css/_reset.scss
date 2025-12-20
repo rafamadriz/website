@@ -1,4 +1,4 @@
-// CSS reset with some bits from Andy Bell and others from Josh Comeau
+// CSS reset with mainly bits from Andy Bell and Josh Comeau. But also from other places.
 // Andy: https://piccalil.li/blog/a-more-modern-css-reset/
 // Josh: https://www.joshwcomeau.com/css/custom-css-reset/
 
@@ -10,7 +10,7 @@
 }
 
 // Remove all default margin for better authored CSS, with exception of dialog
-// which is centered in viewport. That's a reasonable default
+// which is centered on viewport. That's a reasonable default
 *:not(dialog) {
   margin: 0;
 }
@@ -60,8 +60,10 @@ img, picture, video, canvas, svg {
 
 // Inherit fonts for inputs and buttons
 input, button, textarea, select {
-  font-family: inherit;
-  font-size: inherit;
+  font: inherit;
+  // https://adrianroselli.com/2019/09/under-engineered-text-boxen.html#Basic
+  letter-spacing: inherit;
+  word-spacing: inherit;
 }
 
 // Make sure textareas without a rows attribute are not tiny
