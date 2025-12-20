@@ -7,12 +7,12 @@
     "11ty:watch": "npx @11ty/eleventy --watch --ignore-initial",
 
     "wrangler:dev": "npx wrangler dev --live-reload",
-    "wrangler:deploy": "npx wrangler deploy",
+    "wrangler:deploy": "npm run build && npx wrangler deploy",
 
-    "build": "sh ./src/scripts/build.sh",
-    "start": "sh ./src/scripts/start_server.sh",
+    "build": "sh ./scripts/build.sh",
+    "start": "sh ./scripts/start_server.sh",
 
-    "images": "sh ./src/scripts/convert_to_avif_and_delete_original.sh"
+    "images": "sh ./scripts/convert_to_avif_and_delete_original.sh"
   },
   "devDependencies": {
     "@11ty/eleventy": "^3.1.2",
