@@ -8,13 +8,40 @@ body {
 }
 
 article {
+    max-width: 95rem;
+    display: grid;
+    margin-inline: auto;
+    grid-template-columns:
+    minmax(20rem, 1fr)   // left gutter / toc space
+    minmax(360px, 66ch)  // centered content column
+    minmax(0, 1fr);      // right gutter
+
+    grid-template-areas: 
+    ". header ."
+    "toc content .";
+
     header {
+        grid-area: header;
+        padding-block-end: 3em;
+
         h1 {
             font-size: var(--step-5);
         }
     }
 
+    nav.toc {
+        grid-area: toc;
+        padding-inline-end: var(--space-s-m);
+        padding-block-start: var(--space-s-m);
+        ul {
+            list-style: none;
+            padding-left: 0;
+        }
+    }
+
     section.content {
+        grid-area: content;
+
         // Font family for code is DejaVu Sans Mono
         // and it looks much bigger than Alegreya at same size,
         // which makes inline code look weird. To fix use one step less
@@ -35,6 +62,14 @@ article {
         }
         h4 {
             font-size: var(--step-1);
+        }
+
+        // https://bell.bz/my-favourite-3-lines-of-css/
+        // https://every-layout.dev/layouts/stack/
+        // every direct sibling child element of .stack has margin-block-start added to it.
+        // This is achieved by the Lobotomised Owl selector, but the > combinator is added to prevent margin being added recursively
+        > * + * {
+            margin-block-start: var(--flow-space, 1.3em);
         }
     }
 }
