@@ -26,15 +26,13 @@ details {
     background-color: var(--color-accent-100);
 }
 
-main {
-    a {
-        color: var(--color-accent-800);
-        text-decoration: none;
+a {
+    color: var(--color-accent-800);
+    text-decoration: none;
 
-        &:hover, &:focus {
-            text-decoration: underline wavy var(--color-accent-700);
-            text-decoration-thickness: 2px;
-        }
+    &:hover, &:focus {
+        text-decoration: underline wavy var(--color-accent-700);
+        text-decoration-thickness: 2px;
     }
 }
 
