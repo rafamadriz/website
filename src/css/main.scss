@@ -33,6 +33,10 @@ article {
         grid-area: toc;
         padding-inline-end: var(--space-s-m);
         padding-block-start: var(--space-s-m);
+        position: sticky;
+        top: 0;
+        align-self: self-start;
+
         ul {
             list-style: none;
             padding-left: 0;
