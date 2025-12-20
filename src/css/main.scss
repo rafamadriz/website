@@ -64,9 +64,9 @@ article {
     min-width: 360px;
     max-width: max-content;
     padding: var(--space-s-m);
-    max-width: 95rem;
 
     header {
+        max-width: 66ch;
         padding-block-end: 3em;
 
         h1 {
