@@ -25,9 +25,13 @@ main {
     }
 }
 
-pre code {
-    display: block;
-    overflow-x: auto;
+pre {
+    border: 2px solid var(--color-base-400);
+    border-radius: 5px;
+    code {
+        display: block;
+        overflow-x: auto;
+    }
 }
 
 nav.toc ul {
