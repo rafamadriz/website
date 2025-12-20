@@ -29,6 +29,9 @@ const openLinksNewTab = (content, outputPath) => {
 }
 
 export default async function(eleventyConfig) {
+    // COPY TO OUTPUT FOLDER
+    eleventyConfig.addPassthroughCopy("src/static")
+
     // TRANSFORMS
     eleventyConfig.addTransform("external-links", openLinksNewTab)
     // Remove .html from `page.url`
