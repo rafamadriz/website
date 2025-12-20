@@ -1,11 +1,20 @@
 {{ layout  "layouts/base.vto" }}
 
-<article>
-    <header>
-        <h1 class="title">
-            {{ title }}
-        </h1>
-    </header>
-    {{ content }}
-</article>
+<div class="article-wrapper">
+    <article>
+
+        <header>
+            <h1>{{ title }}</h1>
+        </header>
+
+        <nav class="toc">
+            {{ content |> toc }}
+        </nav>
+
+        <section class="content">
+            {{ content }}
+        </section>
+
+    </article>
+</div>
 {{ /layout }}
