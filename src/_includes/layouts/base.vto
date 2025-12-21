@@ -6,7 +6,7 @@
         <title>{{ title }}</title>
         {{#- SOURCE: https://github.com/zachleat/zachleat.com/blob/a9ef5f894aa81a93f62664c90c394e828cf5fbc5/_includes/layouts/base.liquid#L45-L50 -#}}
         {{#- Critical CSS in production, blocking stylesheet for local dev for better livereload -#}}
-        {{ if eleventy.env.runMode === "serve" }}
+        {{ if eleventy.env.runMode === "watch" }}
             <link rel="stylesheet" href="/css/main.css">
         {{ else }}
             <style> {{ inlined.css["main"] }} </style>
