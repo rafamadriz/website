@@ -153,7 +153,7 @@ I also decided to change the URL from previous posts to simplify them. I really 
 
 With the date in the folder name, I was getting `/blog/2025-07-04-starting-before-its-perfect`. Here's something else that Zola does by default, it ignores the date part of the name for the URL but I had to configure it in Eleventy. But something else I wanted to have was a way of changing the final URL by adding data to the post frontmatter but fallback to the post title if I didn't add it.
 
-This can be accomplished by using [Template and Directory Specific Data Files](https://www.11ty.dev/docs/data-template-dir/). In this case I needed to add data in all `/blog/**/*` files, and since we are going to be computing the final result for the URL, we use a JS data file. I added `/blog/blog.11tydata.js`, which for some reason in Eleventy, JS data files need to have `11tydata.js`, it cannot be just `blog.json` like with JSON. But anyway, I also needed to add a helper function to slugify text since Vento doesn't come with one. Finally in `blog.11tydata.js`:
+This can be accomplished by using [Template and Directory Specific Data Files](https://www.11ty.dev/docs/data-template-dir/). In this case I needed to add data in all `/blog/**/*` files, and since we are going to be computing the final result for the URL, we use a JS data file. I added `/blog/blog.11tydata.js`, which for some reason in Eleventy, JS data files need to have `11tydata.js`, it cannot be just `blog.js` like with JSON. But anyway, I also needed to add a helper function to slugify text since Vento doesn't come with one. Finally in `blog.11tydata.js`:
 
 ```js
 import slugifyString from "../_utils/slugify.js"
