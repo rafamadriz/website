@@ -20,7 +20,9 @@
     "@uncenter/eleventy-plugin-toc": "^1.0.3",
     "eleventy-plugin-vento": "^5.2.1",
     "markdown-it-anchor": "^9.2.0",
+    "markdown-it-attrs": "^4.3.1",
     "markdown-it-footnote": "^4.0.0",
+    "markdown-it-implicit-figures": "^0.12.0",
     "node-html-parser": "^7.0.1",
     "sass": "^1.97.0",
     "wrangler": "^4.56.0"

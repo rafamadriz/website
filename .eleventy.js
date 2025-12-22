@@ -4,6 +4,8 @@ import footnote_plugin from "markdown-it-footnote"
 import { InputPathToUrlTransformPlugin } from "@11ty/eleventy"
 import pluginTOC from "@uncenter/eleventy-plugin-toc"
 import markdownItAnchor from "markdown-it-anchor"
+import markdownItAttrs from "markdown-it-attrs"
+import implicitFigures from "markdown-it-implicit-figures"
 
 // CUSTOM PLUGINS/UTILS
 import sassPlugin from "./src/_11ty/sassPlugin.js"
@@ -38,12 +40,6 @@ export default async function(eleventyConfig) {
 
     // TRANSFORMS
     eleventyConfig.addTransform("external-links", openLinksNewTab)
-    // Remove .html from `page.url`
-    eleventyConfig.addUrlTransform((page) => {
-        if (page.url.endsWith(".html")) {
-            return page.url.slice(0, -1 * ".html".length)
-        }
-    })
 
     // COLLECTIONS
     eleventyConfig.addCollection("posts", function(CollectionApi) {
@@ -66,6 +62,8 @@ export default async function(eleventyConfig) {
     eleventyConfig.amendLibrary("md", (mdLib) => {
         mdLib.use(footnote_plugin)
         mdLib.use(markdownItAnchor)
+        mdLib.use(markdownItAttrs)
+        mdLib.use(implicitFigures)
     })
     eleventyConfig.addPlugin(eleventyImageTransformPlugin, {
         formats: [ "avif" ],
