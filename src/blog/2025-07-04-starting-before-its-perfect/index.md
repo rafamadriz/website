@@ -6,6 +6,8 @@ description: "Overcoming analysis paralysis and finally launching my personal we
 
 More than 3 years ago I bought my first domain, with the main goal of building my own website. I have always liked the idea of having a place of total ownership over what I can do, just to share things, experiment and learn about the web.
 
+![Domain registration date is January 16 2022](./domain-registration-date.avif)
+
 Another big reason for me was having control over my email. There are way too many horror stories of people losing access to almost all of their digital life because their account was incorrectly banned. And no, if you use Gmail (or basically any other email service with users in the hundred of millions), there's no way of contacting a real human being for help in case that happens to you. Your account can just be deactivated one day without explanation.
 
 I did set up the email on my own domain when I bought it, but why did it take so long for my website? Honestly, I have a problem of postponing projects indefinitely even though I had more than enough time to put this simple site online. However, in my defense, there was one mayor reason, and it was [**paralysis by analysis**](https://en.wikipedia.org/wiki/Analysis_paralysis).
