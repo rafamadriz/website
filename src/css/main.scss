@@ -96,6 +96,13 @@ code {
     font-size: var(--step--1);
 }
 
+p > code {
+    background-color: var(--color-accent-50);
+    color: var(--color-accent-700);
+    border-radius: 5px;
+    padding: 3px;
+}
+
 nav.toc ul {
     list-style: none;
     padding-left: 0;
