@@ -55,7 +55,7 @@ h4 {
     margin-block-start: var(--flow-space, 1.3em);
 }
 
-details {
+article details {
     background-color: var(--color-base-300);
     max-width: 63ch;
     padding: var(--space-xs-s);
@@ -65,6 +65,13 @@ details {
 
     ul {
         padding-block-start: var(--space-xs-s);
+    }
+
+    nav a:visited {
+        color: var(--color-accent-700);
+        &:hover {
+            text-decoration: underline wavy var(--color-accent-700);
+        }
     }
 }
 
@@ -139,13 +146,11 @@ main > article {
         text-align: center;
     }
 
-  a {
-    &:visited {
-      color: var(--color-yellow-950);
+    a:visited {
+        color: var(--color-yellow-950);
 
-      &:hover, &:focus {
-        text-decoration-color: var(--color-yellow-900);
-      }
+        &:hover, &:focus {
+            text-decoration-color: var(--color-yellow-900);
+        }
     }
-  }
 }
