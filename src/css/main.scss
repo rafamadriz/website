@@ -17,6 +17,19 @@ body {
     }
 }
 
+h1 {
+    font-size: var(--step-5);
+}
+h2 {
+    font-size: var(--step-3);
+}
+h3 {
+    font-size: var(--step-2);
+}
+h4 {
+    font-size: var(--step-1);
+}
+
 // https://bell.bz/my-favourite-3-lines-of-css/
 // https://every-layout.dev/layouts/stack/
 // every direct sibling child element of .stack has margin-block-start added to it.
@@ -88,23 +101,9 @@ article {
     header {
         margin-inline: auto;
         padding-block-end: 3em;
-
-        h1 {
-            font-size: var(--step-5);
-        }
     }
 
     section.main-content {
-        h2 {
-            font-size: var(--step-3);
-        }
-        h3 {
-            font-size: var(--step-2);
-        }
-        h4 {
-            font-size: var(--step-1);
-        }
-
         .content {
             max-width: 66ch;
             a {
