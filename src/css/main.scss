@@ -21,10 +21,8 @@ body {
 // https://every-layout.dev/layouts/stack/
 // every direct sibling child element of .stack has margin-block-start added to it.
 // This is achieved by the Lobotomised Owl selector, but the > combinator is added to prevent margin being added recursively
-.prose {
-    > * + * {
-        margin-block-start: var(--flow-space, 1.3em);
-    }
+.prose > * + * {
+    margin-block-start: var(--flow-space, 1.3em);
 }
 
 main .main-wrapper {
