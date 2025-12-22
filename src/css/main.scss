@@ -1,19 +1,36 @@
 @use "reset";
 @use "global";
 
+@mixin grid-layout {
+    display: grid;
+    grid-template-columns:
+        1fr
+        minmax(0, var(--space-l))
+        minmax(0, var(--space-l))
+        min(60ch, 100%)
+        minmax(0, var(--space-l))
+        minmax(0, var(--space-l))
+        1fr;
+
+    > * {
+        grid-column: 4;
+    }
+}
+
 body {
     font-family: "Alegreya";
     font-size: var(--step-0);
     background-color: var(--color-bg);
     color: var(--color-fg);
 
-    > nav {
-        display: flex;
-        max-width: 65rem;
-        margin-inline: auto;
-        font-size: var(--step-1);
-        justify-content: space-between;
-        padding: var(--space-2xs) var(--space-s-m);
+    .navbar {
+        @include grid-layout();
+        padding-block-start: var(--space-2xs);
+        padding-block-end: var(--space-s);
+        > nav {
+            grid-column: 2;
+            font-size: var(--step-0);
+        }
     }
 }
 
@@ -36,16 +53,6 @@ h4 {
 // This is achieved by the Lobotomised Owl selector, but the > combinator is added to prevent margin being added recursively
 .prose > * + * {
     margin-block-start: var(--flow-space, 1.3em);
-}
-
-main .main-wrapper {
-    min-width: 360px;
-    max-width: 65rem;
-    margin-inline: auto;
-    padding: var(--space-s-m);
-    display: flex;
-    flex-direction: column;
-    align-content: center;
 }
 
 details {
@@ -97,24 +104,36 @@ nav.toc ul {
     }
 }
 
-article {
+.grid-bleed, figure {
+    width: 100%;
+    grid-column: 3 / 6 !important;
+}
+
+.grid-full-bleed {
+    width: 100%;
+    grid-column: 1 / 8;
+}
+
+main div.homepage {
+    @include grid-layout();
+}
+
+main > article {
+    @include grid-layout();
     header {
-        margin-inline: auto;
+        width: 100%;
         padding-block-end: 3em;
+        grid-column: 1 / 8;
+        text-align: center;
     }
 
-    section.main-content {
-        .content {
-            max-width: 66ch;
-            a {
-                &:visited {
-                    color: var(--color-yellow-950);
+  a {
+    &:visited {
+      color: var(--color-yellow-950);
 
-                    &:hover, &:focus {
-                        text-decoration-color: var(--color-yellow-900);
-                    }
-                }
-            }
-        }
+      &:hover, &:focus {
+        text-decoration-color: var(--color-yellow-900);
+      }
     }
+  }
 }
