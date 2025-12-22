@@ -35,6 +35,10 @@ body div.navbar {
     }
 }
 
+main {
+    margin-inline: var(--space-xs);
+}
+
 h1 {
     font-size: var(--step-5);
 }
