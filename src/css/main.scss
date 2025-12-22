@@ -22,15 +22,16 @@ body {
     font-size: var(--step-0);
     background-color: var(--color-bg);
     color: var(--color-fg);
+}
 
-    .navbar {
-        @include grid-layout();
-        padding-block-start: var(--space-2xs);
-        padding-block-end: var(--space-s);
-        > nav {
-            grid-column: 2;
-            font-size: var(--step-0);
-        }
+body div.navbar {
+    @include grid-layout();
+    padding-block-start: var(--space-2xs);
+    padding-block-end: var(--space-s);
+    > nav {
+        margin-inline: var(--space-xs);
+        grid-column: 2 / 6;
+        font-size: var(--step-0);
     }
 }
 
