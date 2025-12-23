@@ -21,7 +21,7 @@ cd $PROJECT_ROOT
 npx @11ty/eleventy
 
 # Eleventy watches file changes on background
-npx @11ty/eleventy --watch --quiet --ignore-initial &
+npx @11ty/eleventy --watch --ignore-initial &
 # Save Eleventy background process ID
 ELEVENTY_PID=$!
 
