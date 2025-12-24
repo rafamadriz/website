@@ -8,7 +8,8 @@
         "head_sampling_rate": 1
     },
     "assets": {
-        "directory": "./public"
+        "directory": "./public",
+        "html_handling": "drop-trailing-slash"
     },
     "routes": [
         {

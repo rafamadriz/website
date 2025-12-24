@@ -5,11 +5,12 @@
         <h1>{{ title }}</h1>
     </header>
 
-    {{ if content |> toc }}
+    {{ set toc = content |> toc }}
+    {{ if toc.length > 3 }}
     <details open="true">
         <summary>Table of contents</summary>
         <nav class="toc">
-            {{ content |> toc }}
+            {{ toc.list }}
         </nav>
     </details>
     {{ /if }}
@@ -17,4 +18,5 @@
     {{ content }}
 
 </article>
+
 {{ /layout }}
