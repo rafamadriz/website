@@ -177,7 +177,7 @@ export default function() {
 }
 ```
 
-Now in any post frontmatter I can add `shortTitle: "Shorter title"`. A practical example from the [previous post](../2025-07-13-changing-hosting-provider-and-css-improvements/index.md). I set the `shortTitle: "Hosting and CSS improvements"`, result:
+Now in any post frontmatter I can add `shortTitle: "Shorter title"`. A practical example from the [previous post]({{ "Hosting and CSS improvements" |> postUrl }}). I set the `shortTitle: "Hosting and CSS improvements"`, result:
 
 - Before: `/blog/changing-hosting-provider-and-css-improvements`
 - After: `/blog/hosting-and-css-improvements`

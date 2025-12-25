@@ -37,6 +37,16 @@ site.process( [".html"], (pages) => {
     }
 })
 
+site.filter("postUrl", (title: string) => {
+    const page = site.pages.find(page => {
+        if (page.data.title?.toLowerCase() === title.toLowerCase() ||
+            page.data.shortTitle?.toLowerCase() === title.toLowerCase())
+            return page
+    })
+    const pageUrl = page?.data.url
+    return `https://rafaelmadriz.com${pageUrl}`.slice(0, -1)
+})
+
 const getHeadingsList = (headers: { level: number; text: string; id: string | null; children: never[]; }[]) => {
     let html = ""
 
