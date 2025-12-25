@@ -1,10 +1,9 @@
 import { DOMParser } from "jsr:@b-fuze/deno-dom@0.1.56";
 import textLoader from "lume/core/loaders/text.ts";
 import lume from "lume/mod.ts";
-import relativeUrls from "lume/plugins/relative_urls.ts";
 import sass from "lume/plugins/sass.ts";
-import slugifyUrls from "lume/plugins/slugify_urls.ts";
 import { MarkedEngine } from "./marked.ts";
+import extractDate from "lume/plugins/extract_date.ts";
 
 const site = lume({
     src: "./src",
@@ -12,8 +11,7 @@ const site = lume({
 });
 
 site.use(sass())
-site.use(slugifyUrls())
-site.use(relativeUrls())
+site.use(extractDate())
 
 site.add("css/main.scss")
 site.copy("static", "static")
@@ -37,14 +35,12 @@ site.process( [".html"], (pages) => {
     }
 })
 
-site.filter("postUrl", (title: string) => {
+site.filter("postUrl", (name: string) => {
     const page = site.pages.find(page => {
-        if (page.data.title?.toLowerCase() === title.toLowerCase() ||
-            page.data.shortTitle?.toLowerCase() === title.toLowerCase())
-            return page
+        if (page.data.basename === name) return page
     })
-    const pageUrl = page?.data.url
-    return `https://rafaelmadriz.com${pageUrl}`.slice(0, -1)
+    const pageUrl = page?.data.basename
+    return `https://rafaelmadriz.com/blog/${pageUrl}`
 })
 
 const getHeadingsList = (headers: { level: number; text: string; id: string | null; children: never[]; }[]) => {

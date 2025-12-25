@@ -1,13 +1,12 @@
 ---
 title: "Changing hosting provider and CSS improvements"
-shortTitle: "Hosting and CSS improvements"
 date: 2025-07-13
 description: "My journey migrating from Fastmail to Cloudflare for website hosting, plus CSS enhancements including better typography, code blocks, font declarations, and anchor links"
 ---
 
 My plan was to use Fastmail's feature for [hosting websites](https://www.fastmail.help/hc/en-us/articles/1500000280141-How-to-set-up-a-website), since I'm already hosting my email with them (amazing service by the way), and changing hosting would mean modifying nameservers and messing with DNS settings that I don't want to mess with because I'm no expert and anything wrong can cause some downtime for your email, which is not good if someone happens to send you an important email during that time.
 
-But by the time I published my second [post]({{ "Color palette, font and favicon" |> postUrl }}), I was already getting a bit frustrated with the Fastmail workflow. I had to setup [`rclone`](https://rclone.org/) to update the website from the command line and avoid manually uploading thorough Fastmail's interface. However, in my experience this was a bit unreliable, sometimes the files wouldn't sync correctly, and I had to manually update the files anyway, not really sure if the issue was related to Webdav or what, but I even had to delete the folder in Fastmail multiple times to get it working again. So after going through this with just two posts, I was like *"Yeah I'm not dealing with this every time I publish something"*.
+But by the time I published my second [post]({{ "color-palette-font-and-favicon" |> postUrl }}), I was already getting a bit frustrated with the Fastmail workflow. I had to setup [`rclone`](https://rclone.org/) to update the website from the command line and avoid manually uploading thorough Fastmail's interface. However, in my experience this was a bit unreliable, sometimes the files wouldn't sync correctly, and I had to manually update the files anyway, not really sure if the issue was related to Webdav or what, but I even had to delete the folder in Fastmail multiple times to get it working again. So after going through this with just two posts, I was like *"Yeah I'm not dealing with this every time I publish something"*.
 
 I went straight into Cloudflare without looking anywhere else. From what I've seen, people always have positive things to say about them (for the most part) and it's always one of the top recommendations. First, I needed to change the nameservers to Cloudflare's, and keep all of my email working with minimal downtime. This was surprisingly easy because Cloudflare automatically detected all of my DNS settings and preserved them. The only problem was that the settings for DKIM[^1] had a different proxy, so after a minor tweak, it was all good for my email again.
 
