@@ -7,4 +7,4 @@ const url = (page) => {
     }
 }
 
-export default { layout: "layouts/post.vto", templateEngine: [ "vto", "md" ], url }
+export default { layout: "layouts/post.vto", url }

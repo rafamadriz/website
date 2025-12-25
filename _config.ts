@@ -24,6 +24,10 @@ site.loadPages([ ".md" ], {
     engine: new MarkedEngine()
 })
 
+site.preprocess([".md"], (pages) => {
+  pages.forEach((page) => page.data.templateEngine = ["vto", "md"])
+})
+
 const getHeadingsList = (headers: { level: number; text: string; id: string | null; children: never[]; }[]) => {
     let html = ""
 
