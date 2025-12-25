@@ -1,13 +1,14 @@
-import markedFootnote from 'https://cdn.jsdelivr.net/npm/marked-footnote@1.4.0/+esm';
-import { gfmHeadingId } from "https://cdn.jsdelivr.net/npm/marked-gfm-heading-id@4.1.3/+esm";
-import { marked } from "https://cdn.jsdelivr.net/npm/marked/lib/marked.esm.js";
-
+import markedFootnote from "npm:marked-footnote@1.4.0"
+import { gfmHeadingId } from "npm:marked-gfm-heading-id@4.1.3"
+import { marked } from "npm:marked@17.0.1"
 marked.use(gfmHeadingId())
 
 marked.use(markedFootnote({
     footnoteDivider: true,
     sectionClass: "footnotes prose"
 }))
+
+marked.use(gfmHeadingId())
 
 export class MarkedEngine implements Lume.Engine {
     render(content: string, _data: Record<string, unknown>, _filename: string) {
