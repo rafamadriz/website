@@ -1,10 +1,10 @@
 import { DOMParser } from "jsr:@b-fuze/deno-dom@0.1.56";
 import textLoader from "lume/core/loaders/text.ts";
 import lume from "lume/mod.ts";
-import sass from "lume/plugins/sass.ts";
-import { MarkedEngine } from "./marked.ts";
-import slugifyUrls from "lume/plugins/slugify_urls.ts";
 import relativeUrls from "lume/plugins/relative_urls.ts";
+import sass from "lume/plugins/sass.ts";
+import slugifyUrls from "lume/plugins/slugify_urls.ts";
+import { MarkedEngine } from "./marked.ts";
 
 const site = lume({
     src: "./src",
