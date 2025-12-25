@@ -28,6 +28,15 @@ site.preprocess([".md"], (pages) => {
   pages.forEach((page) => page.data.templateEngine = ["vto", "md"])
 })
 
+site.process( [".html"], (pages) => {
+    for (const page of pages) {
+        page.document.querySelectorAll("a[href^='http']").forEach(a => {
+            a.setAttribute("target", "_blank")
+            a.setAttribute("rel", "noopener")
+        })
+    }
+})
+
 const getHeadingsList = (headers: { level: number; text: string; id: string | null; children: never[]; }[]) => {
     let html = ""
 
