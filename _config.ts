@@ -1,6 +1,7 @@
 import { DOMParser } from "jsr:@b-fuze/deno-dom@0.1.56";
 import textLoader from "lume/core/loaders/text.ts";
 import lume from "lume/mod.ts";
+import checkUrls from "lume/plugins/check_urls.ts";
 import sass from "lume/plugins/sass.ts";
 import { MarkedEngine } from "./marked.ts";
 import extractDate from "lume/plugins/extract_date.ts";
@@ -15,6 +16,9 @@ const site = lume({
 
 site.use(sass())
 site.use(extractDate())
+site.use(checkUrls({
+    output: "broken_links.json",
+}))
 
 site.add("css/main.scss")
 site.copy("static", "static")
