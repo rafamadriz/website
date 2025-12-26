@@ -73,9 +73,9 @@ article details {
     }
 
     nav a:visited {
-        color: var(--color-accent-700);
+        color: var(--color-accent-600);
         &:hover {
-            text-decoration: underline wavy var(--color-accent-700);
+            text-decoration: underline wavy var(--color-accent-600);
         }
     }
 }
@@ -85,11 +85,11 @@ article details {
 }
 
 a {
-    color: var(--color-accent-700);
+    color: var(--color-accent-600);
     text-decoration: none;
 
     &:hover, &:focus {
-        text-decoration: underline wavy var(--color-accent-700);
+        text-decoration: underline wavy var(--color-accent-600);
         text-decoration-thickness: 2px;
     }
 }
@@ -152,7 +152,7 @@ main > article {
     }
 
     a:visited {
-        color: var(--color-yellow-950);
+        color: var(--color-yellow-900);
 
         &:hover, &:focus {
             text-decoration-color: var(--color-yellow-900);
