@@ -50,7 +50,8 @@
       "command": "deno task lume -s"
     },
     "deploy": {
-        "description": "deno task lume && wrangler deploy"
+        "description": "Deploy website to Cloudflare Workers",
+        "command": "deno task lume && wrangler deploy"
     },
     "start": {
       "description": "Run and serve the site for development with wrangler",
