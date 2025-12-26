@@ -9,6 +9,9 @@ import { imageSizeFromFile } from "npm:image-size@2.0.2/fromFile"
 import { walk } from "jsr:@std/fs@1.0.21/walk";
 import { basename } from "jsr:@std/path@1.1.3/basename";
 import smartypants from "npm:smartypants@0.2.2"
+import inline from "lume/plugins/inline.ts";
+import purgecss from "lume/plugins/purgecss.ts";
+import minifyHTML from "lume/plugins/minify_html.ts";
 
 const site = lume({
     src: "./src",
@@ -20,6 +23,13 @@ site.use(extractDate())
 site.use(checkUrls({
     output: "broken_links.json",
 }))
+site.use(purgecss({
+    options: {
+        variables: true,
+    }
+}))
+site.use(inline())
+site.use(minifyHTML())
 
 site.add("css/main.scss")
 site.copy("static", "static")
