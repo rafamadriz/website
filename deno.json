@@ -2,8 +2,7 @@
   "$schema": "https://raw.githubusercontent.com/denoland/deno/main/cli/schemas/config-file.v1.json",
   "vendor": true,
   "imports": {
-    "lume/": "https://cdn.jsdelivr.net/gh/lumeland/lume@3.1.2/",
-    "lume/jsx-runtime": "https://cdn.jsdelivr.net/gh/oscarotero/ssx@0.1.14/jsx-runtime.ts"
+    "lume/": "https://cdn.jsdelivr.net/gh/lumeland/lume@3.1.2/"
   },
   "permissions": {
     "lume": {
@@ -61,9 +60,7 @@
   "compilerOptions": {
     "types": [
       "lume/types.ts"
-    ],
-    "jsx": "react-jsx",
-    "jsxImportSource": "lume"
+    ]
   },
   "unstable": [
     "temporal",
