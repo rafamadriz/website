@@ -65,7 +65,8 @@ site.filter("postUrl", (name: string) => {
     return `https://rafaelmadriz.com/blog/${pageUrl}`
 })
 
-const getHeadingsList = (headers: { level: number; text: string; id: string | null; children: never[]; }[]) => {
+type HeaderNode = { level: number; text: string; id: string | null; children: HeaderNode[] }
+const getHeadingsList = (headers: HeaderNode[]) => {
     let html = ""
 
     for (const header of headers) {
@@ -86,8 +87,8 @@ const getHeadingsList = (headers: { level: number; text: string; id: string | nu
 site.filter("toc", (content) => {
     const contentDOM = new DOMParser().parseFromString(content, "text/html")
     const headings = contentDOM.querySelectorAll("h1, h2, h3, h4")
-    const tree = []
-    const stack = []
+    const tree: HeaderNode[] = []
+    const stack: HeaderNode[] = []
 
     for (const header of headings) {
         const level = Number(header.tagName[1])
