@@ -41,6 +41,10 @@
       "description": "Build the site for production",
       "command": "deno task lume"
     },
+    "images": {
+      "description": "Optimize images",
+      "command": "sh ./scripts/convert_to_avif_and_delete_original.sh"
+    },
     "serve": {
       "description": "Run and serve the site for development",
       "command": "deno task lume -s"
