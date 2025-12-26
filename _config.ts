@@ -15,7 +15,10 @@ site.use(extractDate())
 
 site.add("css/main.scss")
 site.copy("static", "static")
-site.copy([".avif"])
+site.copy([".avif"], (file) => {
+    const filename = file.split("/")[file.split("/").length - 1]
+    return "/static/images/" + filename
+})
 
 site.loadPages([ ".md" ], {
     loader: textLoader,
