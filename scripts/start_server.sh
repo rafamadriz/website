@@ -6,11 +6,6 @@
 # immediately exit if any command has a non-zero exit status.
 set -e
 
-# BUILD
-# Running build before serving seems redundant but it's there to guarantee
-# that public is complete before wrangler starts serving it.
-deno task lume
-
 # Lume watches file changes on background
 deno task lume --watch &
 # Save Lume background process ID
