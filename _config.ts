@@ -8,6 +8,7 @@ import extractDate from "lume/plugins/extract_date.ts";
 import { imageSizeFromFile } from "npm:image-size@2.0.2/fromFile"
 import { walk } from "jsr:@std/fs@1.0.21/walk";
 import { basename } from "jsr:@std/path@1.1.3/basename";
+import smartypants from "npm:smartypants@0.2.2"
 
 const site = lume({
     src: "./src",
@@ -59,6 +60,10 @@ site.process( [".html"], async (pages) => {
             p?.replaceWith(figure)
         }
     }
+})
+
+site.filter("smartypants", (string: string) => {
+    return smartypants(string)
 })
 
 site.filter("postUrl", (name: string) => {

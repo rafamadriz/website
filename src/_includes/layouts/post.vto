@@ -2,11 +2,11 @@
 
 <article class="prose">
     <header>
-        <h1>{{ title }}</h1>
+        <h1>{{ title |> smartypants }}</h1>
     </header>
 
     {{ set toc = content |> toc }}
-    {{ if toc.length > 3 }}
+    {{ if toc.length > 4 }}
     <details open="true">
         <summary>Table of contents</summary>
         <nav class="toc">
