@@ -4,6 +4,9 @@ import lume from "lume/mod.ts";
 import sass from "lume/plugins/sass.ts";
 import { MarkedEngine } from "./marked.ts";
 import extractDate from "lume/plugins/extract_date.ts";
+import { imageSizeFromFile } from "npm:image-size@2.0.2/fromFile"
+import { walk } from "jsr:@std/fs@1.0.21/walk";
+import { basename } from "jsr:@std/path@1.1.3/basename";
 
 const site = lume({
     src: "./src",
@@ -29,12 +32,28 @@ site.preprocess([".md"], (pages) => {
   pages.forEach((page) => page.data.templateEngine = ["vto", "md"])
 })
 
-site.process( [".html"], (pages) => {
+site.process( [".html"], async (pages) => {
     for (const page of pages) {
         page.document.querySelectorAll("a[href^='http']").forEach(a => {
             a.setAttribute("target", "_blank")
             a.setAttribute("rel", "noopener")
         })
+
+        const images = page.document.querySelectorAll("p > img")
+        for (const img of images) {
+            const p = img.parentElement
+            const filename = basename(img.getAttribute("src")!)
+            for await (const entry of walk("./", { skip: [/^public\//], exts: [ "avif" ] })) {
+                if (filename === entry.name) {
+                    const dimensions = await imageSizeFromFile(entry.path)
+                    img.setAttribute("width", String(dimensions.width))
+                    img.setAttribute("height", String(dimensions.height))
+                }
+            }
+            const figure = page.document.createElement("figure")
+            figure.appendChild(img)
+            p?.replaceWith(figure)
+        }
     }
 })
 
