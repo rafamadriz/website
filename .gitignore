@@ -1,6 +1,5 @@
 node_modules
 public
-src/static/fonts
 .wrangler
 vendor
 broken_links.json
