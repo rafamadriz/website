@@ -1,22 +1,19 @@
 {{ layout  "layouts/base.vto" }}
 
-<article class="prose">
-    <header>
-        <h1>{{ title |> smartypants }}</h1>
-    </header>
+<header>
+    <h1>{{ title |> smartypants }}</h1>
+</header>
 
-    {{ set toc = content |> toc }}
-    {{ if toc.length > 4 }}
-    <details open="true">
-        <summary>Table of contents</summary>
-        <nav class="toc">
-            {{ toc.list }}
-        </nav>
-    </details>
-    {{ /if }}
+{{ set toc = content |> toc }}
+{{ if toc.length > 4 }}
+<details open="true">
+    <summary>Table of contents</summary>
+    <nav class="toc">
+        {{ toc.list }}
+    </nav>
+</details>
+{{ /if }}
 
-    {{ content }}
-
-</article>
+{{ content }}
 
 {{ /layout }}
