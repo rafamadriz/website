@@ -1,0 +1,20 @@
+@use "global";
+
+article > ul {
+  padding-inline-start: 0;
+}
+
+li {
+  padding-block: var(--space-2xs);
+  list-style: none;
+}
+
+input {
+  margin-block: var(--space-3xs);
+  margin-inline-end: var(--space-2xs);
+}
+
+.todo-info {
+  padding-block-start: var(--space-s);
+  margin-inline-start: calc(20px + var(--space-2xs));
+}

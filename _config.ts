@@ -40,7 +40,7 @@ site.use(purgecss({
 site.use(inline())
 site.use(minifyHTML())
 
-site.add("css/main.scss")
+site.add("css")
 site.copy("static", "static")
 site.copy([".avif"], (file) => {
     const filename = file.split("/")[file.split("/").length - 1]
