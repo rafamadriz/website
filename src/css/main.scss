@@ -113,7 +113,7 @@ code {
     font-size: var(--step--1);
 }
 
-p > code {
+p > code, li > code {
     background-color: var(--color-accent-50);
     color: var(--color-accent-700);
     border-radius: 5px;
