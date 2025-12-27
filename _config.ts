@@ -1,9 +1,7 @@
 import { DOMParser } from "jsr:@b-fuze/deno-dom@0.1.56";
-import textLoader from "lume/core/loaders/text.ts";
 import lume from "lume/mod.ts";
 import checkUrls from "lume/plugins/check_urls.ts";
 import sass from "lume/plugins/sass.ts";
-import { MarkedEngine } from "./marked.ts";
 import extractDate from "lume/plugins/extract_date.ts";
 import { imageSizeFromFile } from "npm:image-size@2.0.2/fromFile"
 import { walk } from "jsr:@std/fs@1.0.21/walk";
@@ -13,10 +11,21 @@ import inline from "lume/plugins/inline.ts";
 import purgecss from "lume/plugins/purgecss.ts";
 import minifyHTML from "lume/plugins/minify_html.ts";
 
+import remark from "lume/plugins/remark.ts";
+import remarkAttributes from "npm:remark-attributes@0.3.2"
+import remarkSmartypants from "npm:remark-smartypants@3.0.2";
+import rehypeSlug from "npm:rehype-slug@^6.0.0";
+
 const site = lume({
     src: "./src",
     dest: "public",
 });
+
+site.use(remark({
+    remarkPlugins: [ remarkAttributes, remarkSmartypants ],
+    rehypePlugins: [ rehypeSlug ]
+
+}))
 
 site.use(sass())
 site.use(extractDate())
@@ -36,11 +45,6 @@ site.copy("static", "static")
 site.copy([".avif"], (file) => {
     const filename = file.split("/")[file.split("/").length - 1]
     return "/static/images/" + filename
-})
-
-site.loadPages([ ".md" ], {
-    loader: textLoader,
-    engine: new MarkedEngine()
 })
 
 site.preprocess([".md"], (pages) => {
