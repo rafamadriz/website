@@ -147,7 +147,7 @@ main > article {
     @include grid-layout();
     header {
         width: 100%;
-        padding-block-end: 3em;
+        padding-block-end: 1.5em;
         grid-column: 1 / 8;
         text-align: center;
     }
