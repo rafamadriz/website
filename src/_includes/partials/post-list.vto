@@ -5,7 +5,7 @@
     {{ set url = page.url }}
     <li>
         <a href="{{ url }}">
-            {{ title }}
+            {{ title |> smartypants }}
         </a>
         <time datetime="{{ date.toUTCString() }}">{{ Intl.DateTimeFormat("en-GB", { day: "2-digit", month: "long", year: "numeric", timeZone: "UTC"}).format(date) }}</time>
     </li>
