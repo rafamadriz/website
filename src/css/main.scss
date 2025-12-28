@@ -130,7 +130,7 @@ img {
     grid-column: 1 / 8;
 }
 
-main > article {
+article {
     @include grid-layout();
     --flow-space: .6em;
     @include global.flow-space();
