@@ -17,7 +17,9 @@ This is a continuously updated documented where I'm tracking and documenting all
 
 - [ ] Add portfolio. _**[ Added: 2025-12-27 ]**_
 
-- [ ] Add more meta data to pages like descriptions and more. _**[ Added: 2025-12-27 ]**_
+- [ ] Add more meta tags to pages:
+  - [ ] Descriptions. _**[ Added: 2025-12-27 ]**_
+  - [ ] Open graph tags for social sharing. _**[ Added: 2025-12-28 ]**_
 
 - [ ] Add publishing dates to blog posts. _**[ Added: 2025-12-27 ]**_
 
@@ -29,3 +31,13 @@ This is a continuously updated documented where I'm tracking and documenting all
   - [ ] Add [rel-me](https://indieweb.org/rel-me) links. _**[ Added: 2025-12-27 ]**_
   - [ ] Add [h-entry](https://indieweb.org/h-entry) to posts. _**[ Added: 2025-12-27 ]**_
   - [ ] Explore [Syndication models](https://indieweb.org/syndication-models) and [cross-posting](https://indieweb.org/cross-posting). _**[ Added: 2025-12-27 ]**_
+
+- [ ] Improve quotes. Right now they look like normal text from a paragraph, there's no visual distinction. _**[ Added: 2025-12-28 ]**_
+
+- [ ] Add footer. _**[ Added: 2025-12-28 ]**_
+
+- [ ] Add admonitions cards. [Some inspiration](https://turntrout.com/test-page#admonitions). _**[ Added: 2025-12-28 ]**_
+
+- [ ] Add tags to posts. _**[ Added: 2025-12-28 ]**_
+
+- [ ] Add search functionality. _**[ Added: 2025-12-28 ]**_
