@@ -1,0 +1,18 @@
+@use "global";
+
+article, section.footnotes {
+  --flow-space: 1.3em;
+  @include global.flow-space();
+}
+
+details {
+    max-width: 63ch;
+    padding: var(--space-xs-s);
+    border: 3px solid var(--accent-low-ct);
+    border-radius: 5px;
+    margin-block-end: 1.3em;
+
+    ul {
+        padding-block-start: var(--space-xs-s);
+    }
+}
