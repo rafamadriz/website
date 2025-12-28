@@ -5,8 +5,11 @@ article > ul {
 }
 
 li {
-  padding-block: var(--space-2xs);
+  margin-block: var(--space-2xs);
   list-style: none;
+  p {
+    margin-block: 0;
+  }
 }
 
 input {

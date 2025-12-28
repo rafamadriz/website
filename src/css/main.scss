@@ -130,6 +130,10 @@ img {
     grid-column: 1 / 8;
 }
 
+li p {
+    margin-block-end: 1em;
+}
+
 article {
     @include grid-layout();
     --flow-space: .6em;
