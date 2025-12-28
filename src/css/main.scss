@@ -61,14 +61,6 @@ h4 {
     font-size: var(--step-1);
 }
 
-// https://bell.bz/my-favourite-3-lines-of-css/
-// https://every-layout.dev/layouts/stack/
-// every direct sibling child element of .stack has margin-block-start added to it.
-// This is achieved by the Lobotomised Owl selector, but the > combinator is added to prevent margin being added recursively
-.prose > * + * {
-    margin-block-start: var(--flow-space, 1.3em);
-}
-
 article details {
     max-width: 63ch;
     padding: var(--space-xs-s);
@@ -146,6 +138,8 @@ img {
 
 main > article {
     @include grid-layout();
+    --flow-space: .6em;
+    @include global.flow-space();
     header {
         width: 100%;
         padding-block-end: 1.5em;

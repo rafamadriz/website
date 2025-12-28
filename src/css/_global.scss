@@ -68,4 +68,12 @@
   --space-s-l: clamp(1.25rem, 0.4674rem + 3.4783vw, 3.25rem);
 }
 
+// https://bell.bz/my-favourite-3-lines-of-css/
+// https://every-layout.dev/layouts/stack/
+// every direct sibling child element of .stack has margin-block-start added to it.
+// This is achieved by the Lobotomised Owl selector, but the > combinator is added to prevent margin being added recursively
+@mixin flow-space {
+    > * + * {
+        margin-block-start: var(--flow-space, 1em);
+    }
 }
