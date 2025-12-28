@@ -30,9 +30,15 @@ body div.navbar {
     padding-block-start: var(--space-2xs);
     padding-block-end: var(--space-s);
     > nav {
+        display: flex;
+        justify-content: space-between;
         margin-inline: var(--space-xs);
         grid-column: 2 / 6;
         font-size: var(--step-0);
+
+        .links > a:not(:last-child) {
+            margin-inline-end: var(--space-xs);
+        }
     }
 }
 

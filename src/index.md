@@ -9,8 +9,14 @@ layout: layouts/base.vto
 
 </header>
 
-Welcome to my corner of the internet. I'm currently in the proccess of building my website. If you want to send any recommendation or want to get in touch, feel free to send an email: <hello@rafaelmadriz.com>
+Welcome to my corner of the internet. I'm an aspiring Software Engineer, passionate about programming, open-source, Linux and more. Here you can find my writings about anything I find interesting.
 
-Me in other places: <a href="https://github.com/rafamadriz">Github</a> and <a href="https://bsky.app/profile/rafaelmadriz.com">Bluesky</a>.
+## Links
+
+- <a href="mailto:hello@rafaelmadriz.com">Contact</a>
+- <a href="https://github.com/rafamadriz">Github</a>
+- <a href="https://bsky.app/profile/rafaelmadriz.com">Bluesky</a>
+
+## Posts
 
 {{ include "partials/post-list.vto" }}
