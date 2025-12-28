@@ -1,5 +1,5 @@
 ---
-titile: Log for all features
+title: Log for all features
 layout: layouts/base.vto
 customCSS: /css/todo.css
 ---
