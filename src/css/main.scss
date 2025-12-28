@@ -21,8 +21,8 @@
 body {
     font-family: "Alegreya";
     font-size: var(--step-0);
-    background-color: var(--color-bg);
-    color: var(--color-fg);
+    background-color: var(--bg);
+    color: var(--base-fg);
 }
 
 body div.navbar {
@@ -42,6 +42,10 @@ header.homepage-header {
 
 main {
     margin-inline: var(--space-xs);
+}
+
+h1, h2, h3, h4 {
+    color: var(--big-fg);
 }
 
 h1 {
@@ -66,41 +70,38 @@ h4 {
 }
 
 article details {
-    background-color: var(--color-base-300);
     max-width: 63ch;
     padding: var(--space-xs-s);
-    border: 2px solid var(--color-base-400);
+    border: 3px solid var(--accent-low-ct);
     border-radius: 5px;
     margin-block-end: 1.3em;
 
     ul {
         padding-block-start: var(--space-xs-s);
     }
-
-    nav a:visited {
-        color: var(--color-accent-600);
-        &:hover {
-            text-decoration: underline wavy var(--color-accent-600);
-        }
-    }
 }
 
 ::selection {
-    background-color: var(--color-accent-100);
+    background-color: var(--accent-low-ct);
 }
 
 a {
-    color: var(--color-accent-600);
-    text-decoration: none;
+    color: var(--link-accent);
 
-    &:hover, &:focus {
-        text-decoration: underline wavy var(--color-accent-600);
-        text-decoration-thickness: 2px;
+    &:hover  {
+        background-color: var(--link-accent);
+        color: var(--bg);
+        text-decoration: none;
+    }
+    &:focus {
+        border: solid 2px var(--link-accent);
+        text-decoration: none;
     }
 }
 
 pre {
-    border: 2px solid var(--color-base-400);
+    border: 3px solid var(--accent-low-ct);
+    padding: var(--space-2xs);
     border-radius: 5px;
     display: block;
     overflow-x: auto;
@@ -114,8 +115,8 @@ code {
 }
 
 p > code, li > code {
-    background-color: var(--color-accent-50);
-    color: var(--color-accent-700);
+    background-color: var(--accent-low-ct);
+    color: var(--link-accent);
     border-radius: 5px;
     padding: 3px;
 }
@@ -150,13 +151,5 @@ main > article {
         padding-block-end: 1.5em;
         grid-column: 1 / 8;
         text-align: center;
-    }
-
-    a:visited {
-        color: var(--color-yellow-900);
-
-        &:hover, &:focus {
-            text-decoration-color: var(--color-yellow-900);
-        }
     }
 }
