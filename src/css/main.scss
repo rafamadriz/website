@@ -139,10 +139,20 @@ article {
     @include grid-layout();
     --flow-space: .6em;
     @include global.flow-space();
-    header {
-        width: 100%;
-        padding-block-end: 1.5em;
+    padding-block-end: 1.5em;
+}
+
+article > header {
+    @include grid-layout();
+    width: 100%;
+    grid-column: 1 / 8;
+
+    h1 {
         grid-column: 1 / 8;
         text-align: center;
+    }
+
+    time {
+        padding-block-start: var(--space-xs);
     }
 }

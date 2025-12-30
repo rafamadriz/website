@@ -2,6 +2,7 @@
 
 <header>
     <h1>{{ title |> smartypants }}</h1>
+    <time datetime="{{ date |> date("DATETIME") }}">{{ date |> date("MMMM dd, yyyy") }}</time>
 </header>
 
 {{ set toc = content |> toc }}
