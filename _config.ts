@@ -93,6 +93,25 @@ site.filter("postUrl", (name: string) => {
     return `https://rafaelmadriz.com/blog/${pageUrl}`
 })
 
+site.filter("todoCompleted", (hash: string) => {
+    const git = new Deno.Command("git", { args: ["show", "--no-patch", "--format=%cI", hash] })
+    const { stdout, stderr, code } = git.outputSync();
+    if (code !== 0) {
+        const err = new TextDecoder().decode(stderr);
+        throw new Error(`Command failed (code ${code}): ${err}`);
+    }
+    const iso = new Date(new TextDecoder().decode(stdout).trim())
+    const date = iso.toLocaleString("en-US",
+        {
+            year: "numeric",
+            month: "2-digit",
+            day: "2-digit",
+            timeZone: "America/Buenos_Aires"
+        }).replaceAll("/", "-")
+
+    return `Completed: ${date} [${hash}](https://github.com/rafamadriz/website/commit/${hash})`
+})
+
 type HeaderNode = { level: number; text: string; id: string | null; children: HeaderNode[] }
 const getHeadingsList = (headers: HeaderNode[]) => {
     let html = ""

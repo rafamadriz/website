@@ -20,7 +20,7 @@ This is a continuously updated documented where I'm tracking and documenting all
   - [ ] Descriptions. _**[ Added: 2025-12-27 ]**_
   - [ ] Open graph tags for social sharing. _**[ Added: 2025-12-28 ]**_
 
-- [ ] Add publishing dates to blog posts. _**[ Added: 2025-12-27 ]**_
+- [x] Add publishing dates to blog posts. _**[ Added: 2025-12-27 ] [{{ "5c29dd8b" |> todoCompleted }}]**_
 
 - [ ] Automate adding date to new posts when site is deployed. I think the simplest solution is to only add post to the git history when they are published, and just use the [Git Created](https://lume.land/docs/creating-pages/page-data/#date) value in the frontmatter. _**[ Added: 2025-12-27 ]**_
 
