@@ -29,6 +29,7 @@ body div.navbar {
     @include grid-layout();
     padding-block-start: var(--space-2xs);
     padding-block-end: var(--space-s);
+    margin-block-end: var(--space-m);
     > nav {
         display: flex;
         justify-content: space-between;
