@@ -7,7 +7,7 @@
         <a href="{{ url }}">
             {{ title |> smartypants }}
         </a>
-        <time datetime="{{ date.toUTCString() }}">{{ Intl.DateTimeFormat("en-GB", { day: "2-digit", month: "long", year: "numeric", timeZone: "UTC"}).format(date) }}</time>
+        <time datetime="{{ date |> date("DATETIME") }}">{{ date |> date("MMMM dd, yyyy") }}</time>
     </li>
     {{ /for }}
 </ul>

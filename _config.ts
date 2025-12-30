@@ -10,11 +10,15 @@ import smartypants from "npm:smartypants@0.2.2"
 import inline from "lume/plugins/inline.ts";
 import purgecss from "lume/plugins/purgecss.ts";
 import minifyHTML from "lume/plugins/minify_html.ts";
+import date from "lume/plugins/date.ts";
 
 import remark from "lume/plugins/remark.ts";
 import remarkAttributes from "npm:remark-attributes@0.3.2"
 import remarkSmartypants from "npm:remark-smartypants@3.0.2";
 import rehypeSlug from "npm:rehype-slug@^6.0.0";
+
+// https://github.com/lumeland/lume/issues/58
+Deno.env.set("TZ", "Z");
 
 const site = lume({
     src: "./src",
@@ -27,6 +31,7 @@ site.use(remark({
 
 }))
 
+site.use(date())
 site.use(sass())
 site.use(extractDate())
 site.use(checkUrls({
