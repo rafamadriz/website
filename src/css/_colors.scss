@@ -97,7 +97,8 @@
   --color-indigo-100: #1e2246;
   --color-indigo-50: #080b1f;
 
-  --bg: var(--color-indigo-50);
+  --bg: #0f0f15;
+  --surface-bg: #11111b;
   --base-fg: var(--color-indigo-900);
   --big-fg: var(--color-indigo-600);
   --link-accent: var(--color-indigo-700);
@@ -204,6 +205,7 @@
     --color-indigo-50: #f1f0fa;
 
   --bg: var(--color-indigo-50);
+  --surface-bg: var(--color-blue-50);
   --base-fg: var(--color-indigo-900);
   --big-fg: var(--color-indigo-600);
   --link-accent: var(--color-indigo-700);
