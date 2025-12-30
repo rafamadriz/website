@@ -16,6 +16,7 @@ import remark from "lume/plugins/remark.ts";
 import remarkAttributes from "npm:remark-attributes@0.3.2"
 import remarkSmartypants from "npm:remark-smartypants@3.0.2";
 import rehypeSlug from "npm:rehype-slug@^6.0.0";
+import rehypeShiki from "npm:@shikijs/rehype@3.9.2"
 
 // https://github.com/lumeland/lume/issues/58
 Deno.env.set("TZ", "Z");
@@ -27,8 +28,19 @@ const site = lume({
 
 site.use(remark({
     remarkPlugins: [ remarkAttributes, remarkSmartypants ],
-    rehypePlugins: [ rehypeSlug ]
-
+    rehypePlugins: [ rehypeSlug, [ rehypeShiki, {
+        inline: "tailing-curly-colon",
+        highlighter: {
+            langs: ["javascript", "typescript", "lua", "html", "c", "go", "css", "shell"],
+            themes: ["catppuccin-mocha", "catppuccin-latte"],
+        },
+        themes: {
+            light: "catppuccin-latte",
+            dark: "catppuccin-mocha",
+        },
+        defaultColor: "dark",
+    } ]
+    ]
 }))
 
 site.use(date())
