@@ -42,3 +42,5 @@ This is a continuously updated documented where I'm tracking and documenting all
 - [ ] Add search functionality. _**[ Added: 2025-12-28 ]**_
 
 - [ ] Design a favicon/logo. _**[ Added: 2025-12-28 ]**_
+
+- [ ] Add syntax highlighting to multiline code blocks. _**[ Added: 2025-12-29 ]**_
