@@ -32,7 +32,7 @@ This is a continuously updated documented where I'm tracking and documenting all
 
 - [ ] Add search functionality. _**[ Added: 2025-12-28 ]**_
 
-- [ ] Design a favicon/logo. _**[ Added: 2025-12-28 ]**_
+- [x] Design a favicon/logo. _**[ Added: 2025-12-28 ] [{{ "3c48eb7c" |> todoCompleted }}]**_
 
 - [ ] Improvements to code blocks:
     - [x] Add syntax highlighting to multiline code blocks. _**[ Added: 2025-12-29 ] [{{ "a728861b" |> todoCompleted }}]**_
