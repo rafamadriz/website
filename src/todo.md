@@ -43,4 +43,7 @@ This is a continuously updated documented where I'm tracking and documenting all
 
 - [ ] Design a favicon/logo. _**[ Added: 2025-12-28 ]**_
 
-- [ ] Add syntax highlighting to multiline code blocks. _**[ Added: 2025-12-29 ]**_
+- [ ] Improvements to code blocks:
+    - [x] Add syntax highlighting to multiline code blocks. _**[ Added: 2025-12-29 ] [{{ "a728861b" |> todoCompleted }}]**_
+    - [ ] Add line numbers, and an option to start at specific line number. See [Issue #3](https://github.com/shikijs/shiki/issues/3). _**[ Added: 2025-12-30 ]**_
+    - [ ] Add option to add filename to code block. _**[ Added: 2025-12-30 ]**_
