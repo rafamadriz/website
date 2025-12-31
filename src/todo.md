@@ -51,3 +51,7 @@ This is a continuously updated documented where I'm tracking and documenting all
 ## Local Development
 
 - [ ] Automate adding date to new posts when site is deployed. I think the simplest solution is to only add post to the git history when they are published, and just use the [Git Created](https://lume.land/docs/creating-pages/page-data/#date) value in the frontmatter. _**[ Added: 2025-12-27 ]**_
+
+- [ ] Setup formatting files. _**[ Added: 2025-12-30 ]**_
+
+- [ ] Add testing for dead (404) external links. _**[ Added: 2025-12-30 ]**_
