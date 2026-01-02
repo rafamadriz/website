@@ -23,13 +23,14 @@ After a couple of years with this project in the back of my mind the entire time
 
 > The personal website. It’s a place to write, create, and share whatever you like, without the need to ask for anyone’s permission. It is also the perfect place to explore and try new things ...
 > It is totally up to you what you create and because you have unlimited shots on the Web, you can try out different formats, different styles, different topics. Regardless of what other people might think and although it might not work. Creation is free.
-> <footer>— <cite><a href="https://matthiasott.com/articles/into-the-personal-website-verse">Matthias Ott</a></cite></footer>
+>
+> — <a href="https://matthiasott.com/articles/into-the-personal-website-verse">Matthias Ott</a> {.cite}
 
 I realized that I didn't need to choose the *"perfect"* set of technologies to start my website, that's not the point, the point is to make mistakes, experiment and most importantly, learn along the journey. No need to overthink or try to optimize everything, because as Matthias points out, you have unlimited shots.
 
 > Personal sites, our blogs, these were once our playgrounds. My own site was the first place I added rollover images, CSS for fonts, tried out a “table free” design. I wrote about the web, surrounded by my own experiments with the web.
 >
-> <footer>— <cite><a href="https://rachelandrew.co.uk/archives/2017/01/05/its-more-than-just-the-words/">Rachel Andrew</a></cite></footer>
+> — <a href="https://rachelandrew.co.uk/archives/2017/01/05/its-more-than-just-the-words/">Rachel Andrew</a> {.cite}
 
 I went with [Zola](https://www.getzola.org/) as my SSG of choice. I really wanted to go the "minimalist" way and use something like [Pandoc](https://pandoc.org/) for generating the HTML from markdown, and that's it, nothing else, but for the time being, I've decided to make my life simpler by using an SSG that comes with a lot of useful features.
 

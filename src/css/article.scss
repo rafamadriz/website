@@ -17,3 +17,16 @@ details {
         padding-block-start: var(--space-xs-s);
     }
 }
+
+blockquote {
+    background-color:  var(--surface-bg);
+    padding: var(--space-xs);
+    border: 2px solid var(--color-indigo-500);
+    border-inline-start: 8px solid var(--color-indigo-500);
+
+    .cite {
+        text-align: right;
+        padding-block-start: var(--space-xs);
+        font-style: italic;
+    }
+}
