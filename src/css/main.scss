@@ -92,6 +92,9 @@ pre {
     border-radius: 5px;
     display: block;
     overflow-x: auto;
+
+    width: 100%;
+    grid-column: 3 / 6 !important;
 }
 // Font family for code is DejaVu Sans Mono
 // and it looks much bigger than Alegreya at same size,
