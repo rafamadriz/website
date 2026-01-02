@@ -59,6 +59,7 @@ site.use(minifyHTML())
 
 site.add("css")
 site.copy("static", "static")
+site.copy("favicon.svg")
 site.copy([".avif"], (file) => {
     const filename = file.split("/")[file.split("/").length - 1]
     return "/static/images/" + filename
