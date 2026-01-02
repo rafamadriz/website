@@ -99,6 +99,7 @@ pre {
 // for inline code, but keep step at 0 for multiline codes.
 code {
     font-size: var(--step--1);
+    font-family: "JetBrains";
 }
 
 .code-container {
@@ -106,6 +107,7 @@ code {
     width: 100%;
     grid-column: 3 / 6 !important;
     border-radius: 8px;
+    font-family: "JetBrains";
 }
 
 .code-header {
