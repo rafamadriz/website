@@ -32,7 +32,7 @@ From my point of view, JavaScript syntax and Neovim integration is what makes th
 
 One little problem with the editor setup, was that using the Tree-sitter grammar only works on Vento (`.vto`) files. I was using `.html` files and telling Eleventy to run HTML files through the Vento template engine:
 
-```js
+```js nolinenumbers filename=".eleventy.js"
 export const config = {
     htmlTemplateEngine: "vto",
 };
@@ -40,7 +40,7 @@ export const config = {
 
 The problem with using Vento files is that the HTML LSP server doesn't work, and if you have other HTML specific settings in your config, those obviously won't work either. This is a small inconvenience since it's not like I'm doing a whole lot on template files and I could be perfectly fine without the LSP server running. But just for the sake of it, I decided to get it working and the simplest solution was using `.vto` files and telling the LSP server to include Vento files by adding a local config in the form of `.nvim.lua`.
 
-```lua
+```lua nolinenumbers filename=".nvim.lua"
 vim.lsp.config("html", {
     filetypes = { "html", "vento" },
 })
@@ -70,7 +70,7 @@ Collections are relatively similar. Zola automatically creates [sections](https:
 
 Since Eleventy doesn't create sections automatically, you have to filter out the base index file (e.g `blog/index.md`) because otherwise it would be included in the collection. I only want a collection of posts without including the base index at the root of the `blog/` folder.
 
-```js .eleventy.js
+```js filename=".eleventy.js"
 export default async function(eleventyConfig) {
     eleventyConfig.addCollection("posts", function(CollectionApi) {
         return CollectionApi
@@ -87,7 +87,7 @@ Then you can iterate over them with your template engine. Also, `collections` is
 
 Something I feel should just be an option you enable in Eleventy, is opening external links in a new tab. Zola has `external_links_target_blank` which you just enable in the configuration and that's it. With Eleventy it is more verbose to setup. There's a npm package you can install called [eleventy-plugin-external-links](https://github.com/vimtor/eleventy-plugin-external-links). It's only a couple of lines so I just copied it to my configuration. But you still need to install [`node-html-parser`](https://github.com/taoqf/node-html-parser) though.
 
-```js .eleventy.js
+```js filename=".eleventy.js"
 // MODIFIED FROM: https://github.com/vimtor/eleventy-plugin-external-links
 import { parse } from "node-html-parser"
 import { extname } from "node:path"
@@ -135,7 +135,7 @@ Header anchors are included in the Eleventy package, but you have to [enable it]
 
 NOTE: The Eleventy package that comes included was not that useful at the end of the day. It was [replaced](https://github.com/rafamadriz/website/commit/a4e54e1a7dc056e36569c8e6a283b810229bc924) for [markdown-it-anchor](https://github.com/valeriangalliat/markdown-it-anchor), since the plugin I use for generating table of contents didn't work with it, or maybe it does but I was not able to make it work.
 
-```js
+```js filename=".eleventy.js"
 import { IdAttributePlugin } from "@11ty/eleventy";
 
 export default function (eleventyConfig) {
@@ -155,7 +155,7 @@ With the date in the folder name, I was getting `/blog/2025-07-04-starting-befor
 
 This can be accomplished by using [Template and Directory Specific Data Files](https://www.11ty.dev/docs/data-template-dir/). In this case I needed to add data in all `/blog/**/*` files, and since we are going to be computing the final result for the URL, we use a JS data file. I added `/blog/blog.11tydata.js`, which for some reason in Eleventy, JS data files need to have `11tydata.js`, it cannot be just `blog.js` like with JSON. But anyway, I also needed to add a helper function to slugify text since Vento doesn't come with one. Finally in `blog.11tydata.js`:
 
-```js
+```js filename="/blog/blog.11tydata.js"
 import slugifyString from "../_utils/slugify.js"
 
 export default function() {
@@ -188,7 +188,7 @@ One final change to URLs was removing the trailing slash. I wasn't sure about th
 
 Ideally, you build your website to be compatible with as many hosting providers as possible, in this sense, always having a trailing slash seems to be the most sensible default for all hosting providers. But I decided to go for my personal preference and remove trailing slashes on pages with no more content under them. Convenient enough, my hosting provider (Cloudflare) behaves exactly like I like. [Here is the documentation to remove trailing slashes on Eleventy](https://www.11ty.dev/docs/permalinks/#remove-trailing-slashes).
 
-```js
+```js filename=".eleventy.js"
 export default function(eleventyConfig) {
     // Remove .html from `page.url`
     eleventyConfig.addUrlTransform((page) => {

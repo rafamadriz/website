@@ -17,6 +17,8 @@ import remarkAttributes from "npm:remark-attributes@0.3.2"
 import remarkSmartypants from "npm:remark-smartypants@3.0.2";
 import rehypeSlug from "npm:rehype-slug@^6.0.0";
 import rehypeShiki from "npm:@shikijs/rehype@3.9.2"
+import { toHtml } from "npm:hast-util-to-html@9.0.5"
+import { fromHtml } from "npm:hast-util-from-html@2.0.3"
 
 // https://github.com/lumeland/lume/issues/58
 Deno.env.set("TZ", "Z");
@@ -39,6 +41,45 @@ site.use(remark({
             dark: "catppuccin-mocha",
         },
         defaultColor: "dark",
+        transformers: [
+            {
+                name: "CodeAddAttributes",
+                root(node) {
+                    const html = toHtml(node)
+                    const dom = new DOMParser().parseFromString(html, "text/html")
+
+                    dom.querySelectorAll("pre").forEach(pre => {
+                        pre.classList.add("linenumbers")
+
+                        const meta = this.options.meta?.__raw
+                        const attributesArray = meta.split(/\s+/).filter(Boolean)
+                        const style = pre.getAttribute("style") ?? ""
+                        let filename
+
+                        for (const attr of attributesArray) {
+                            const [ key, value ] = attr.split("=")
+
+                            switch (key) {
+                                case "filename":
+                                    filename = value.replaceAll("\"", "")
+                                    break
+                                case "nolinenumbers":
+                                    pre.classList.remove("linenumbers")
+                                    break
+                                case "linestart":
+                                    pre.setAttribute("style", `${style}; --linestart: ${value}`)
+                                    break
+                            }
+                        }
+
+                        pre.dataset.filename = filename ?? this.options.lang
+                    })
+
+
+                    return fromHtml(dom.documentElement!.outerHTML, { fragment: true })
+                }
+            }
+        ]
     } ]
     ]
 }))
@@ -52,6 +93,7 @@ site.use(checkUrls({
 site.use(purgecss({
     options: {
         variables: true,
+        safelist: [ "code-container", "code-header", "code-filename" ]
     }
 }))
 site.use(inline())
@@ -90,6 +132,26 @@ site.process( [".html"], async (pages) => {
             const figure = page.document.createElement("figure")
             figure.appendChild(img)
             p?.replaceWith(figure)
+        }
+
+        const pre = page.document.querySelectorAll("pre")
+        for (const code of pre) {
+            const container = page.document.createElement("div")
+            container.classList.add("code-container")
+
+            const codeHeader = page.document.createElement("div")
+            codeHeader.classList.add("code-header")
+
+            const codeFilename = page.document.createElement("div")
+            codeFilename.classList.add("code-filename")
+            codeFilename.textContent = code.dataset.filename
+
+            codeHeader.appendChild(codeFilename)
+
+            code.replaceWith(container)
+
+            container.appendChild(codeHeader)
+            container.appendChild(code)
         }
     }
 })
