@@ -23,6 +23,7 @@ blockquote {
     padding: var(--space-xs);
     border: 2px solid var(--color-indigo-500);
     border-inline-start: 8px solid var(--color-indigo-500);
+    font-style: italic;
 
     .cite {
         text-align: right;
