@@ -49,6 +49,15 @@ This is a continuously updated documented where I'm tracking and documenting all
   - [ ] Add [h-entry](https://indieweb.org/h-entry) to posts. _**[ Added: 2025-12-27 ]**_
   - [ ] Explore [Syndication models](https://indieweb.org/syndication-models) and [cross-posting](https://indieweb.org/cross-posting). _**[ Added: 2025-12-27 ]**_
 
+- [ ] Join a blogroll. There are many but [this one](https://blogroll.org/) is a good starting point. _**[ Added: 2026-01-02 ]**_
+
+- [ ] Add a RSS feed. _**[ Added: 2026-01-02 ]**_
+
+- [ ] Explore implementing view transitions. Some resources: _**[ Added: 2026-01-02 ]**_
+  - Some inspiration in [Naman Goel's blog](https://nmn.sh/)
+  - [Start implementing view transitions on your websites today](https://piccalil.li/blog/start-implementing-view-transitions-on-your-websites-today/)
+  - [CSS View Transitions Will Change Web Design Forever](https://www.youtube.com/watch?v=nZtg-xzhy0g)
+
 ## Local Development
 
 - [ ] Automate adding date to new posts when site is deployed. I think the simplest solution is to only add post to the git history when they are published, and just use the [Git Created](https://lume.land/docs/creating-pages/page-data/#date) value in the frontmatter. _**[ Added: 2025-12-27 ]**_
