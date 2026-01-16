@@ -22,7 +22,7 @@ This is a continuously updated documented where I'm tracking and documenting all
 
 - [ ] Better use of space in desktops by adding left sidebar with table of contents in posts. Table of contents should be sticky. _**[ Added: 2025-12-27 ]**_
 
-- [ ] Improve quotes. Right now they look like normal text from a paragraph, there's no visual distinction. _**[ Added: 2025-12-28 ]**_
+- [x] Improve quotes. Right now they look like normal text from a paragraph, there's no visual distinction. _**[ Added: 2025-12-28 ] [{{ "b23c418" |> todoCompleted }}]**_
 
 - [ ] Add footer. _**[ Added: 2025-12-28 ]**_
 
